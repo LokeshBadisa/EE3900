@@ -170,10 +170,7 @@ Digital Signal Processing
 %
 
 \author{ G V V Sharma$^{*}$ %<-this  stops a space
-\thanks{*The author is with the Department
-of Electrical Engineering, Indian Institute of Technology, Hyderabad
-502285 India e-mail:  gadepall@iith.ac.in.  All content in the manuscript is 
-released under GNU GPL.  Free to use for anything. }% <-this % stops a space
+% <-this % stops a space
 %\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
 %\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 }
@@ -424,6 +421,18 @@ using the fomula for the sum of an infinite geometric progression.
 \label{eq:anun}
 a^nu(n) \ztrans \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
 \end{equation}
+\solution From \eqref{eq:z_trans},
+\begin{equation}
+{\mathcal {Z}}\{a^nu(n)\} = \sum _{n= -\infty}^{\infty}u(n)\brak{\frac{a}{z}}^{-n}
+\end{equation}
+From \eqref{eq:unit_step},
+\begin{align}
+{\mathcal {Z}}\{a^nu(n)\} &= \sum _{n= 0}^{\infty}\brak{\frac{a}{z}}^{-n}\\
+&= \frac{1}{1-\frac{a}{z}}\\
+&= \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
+\end{align}
+using the fomula for the sum of an infinite geometric progression.
+
 %
 \item 
 Let
@@ -467,9 +476,21 @@ using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \item Sketch $h(n)$. Is it bounded? Convergent? 
 \\
 \solution The following code plots Fig. \ref{fig:hn}.
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{./figs/hn}
+\end{center}
+\captionof{figure}{}
+\label{fig:xnyn}	
+\end{figure}
 \begin{lstlisting}
 wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hn.py
 \end{lstlisting}
+$h(n)$ is definitely bounded and convergent,
+\begin{align}
+\lim_{n\to\infty}h(n)&=\lim_{n\to\infty}\brak{-\frac{1}{2}}^{n}u(n) + \lim_{n\to\infty}\brak{-\frac{1}{2}}^{n-2}u(n-2)\\
+&=0
+\end{align}
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/hn}
@@ -482,6 +503,14 @@ wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hn.py
 \sum_{n=-\infty}^{\infty}h(n) < \infty
 \end{equation}
 Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?
+\solution The system defined by (3.2) is stable for the impulse response in (5.1),
+\begin{align}
+\sum_{n=-\infty}^{\infty}h(n)&= \sum_{n=0}^{\infty}h(n)\\
+&=\sum_{n=0}^{\infty}\brak{-\frac{1}{2}}^{n}u(n) + \sum_{n=0}^{\infty}\brak{-\frac{1}{2}}^{n-2}u(n-2)\\
+&=2 \brak{ \frac{1}{1+\frac{1}{2}}}\\
+&=\frac{4}{3}
+\end{align}
+
 %
 \item 
 Compute and sketch $h(n)$ using 
@@ -498,6 +527,12 @@ This is the definition of $h(n)$.
 \begin{lstlisting}
 wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/hndef.py
 \end{lstlisting}
+Computing,\\
+$h(0)=1$\\
+$h(1)=-\frac{1}{2}h(0)$\\
+$h(2)=-\frac{1}{2}h(1)+1$\\
+Parallely, $h(n)=-\frac{1}{2}h(n-1)$
+
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/hndef}
@@ -534,6 +569,14 @@ wget https://raw.githubusercontent.com/gadepall/EE1310/master/filter/codes/yncon
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
 \end{equation}
+\solution \begin{align}
+y(n) &=  x(n)*h(n)
+\end{align}
+Since convolution is commutative,
+\begin{align}
+y(n) &= h(n)*x(n)\\
+&=\sum_{n=-\infty}^{\infty}x(n-k)h(k)
+\end{align}
 \end{enumerate}
 
 %
