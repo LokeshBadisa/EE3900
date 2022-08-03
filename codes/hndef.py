@@ -21,4 +21,4 @@ plt.ylabel('$h(n)$')
 plt.grid()# minor
 
 
-#plt.show()
+plt.show()

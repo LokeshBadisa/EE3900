@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#If using termux
-import subprocess
-import shlex
-#end if
+
 
 
 
@@ -38,9 +35,5 @@ plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()# minor
 
-#If using termux
-plt.savefig('../figs/xnyn.pdf')
-plt.savefig('../figs/xnyn.eps')
-subprocess.run(shlex.split("termux-open ../figs/xnyn.pdf"))
-#else
-#plt.show()
+
+plt.show()

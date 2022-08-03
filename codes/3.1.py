@@ -9,6 +9,6 @@ plt.ylabel('$x(n)$')
 plt.xlabel('$n$')
 
 plt.grid()
-plt.savefig('./figs/3.1.pdf')
-plt.savefig('./figs/3.1.eps')
+plt.savefig('/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/figs/3.1.pdf')
+plt.savefig('/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/figs/3.1.eps')
 plt.show()

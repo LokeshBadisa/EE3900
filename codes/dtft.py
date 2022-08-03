@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#if using termux
-import subprocess
-import shlex
-#end if
+
 
 
 #DTFT
@@ -16,7 +13,7 @@ def H(z):
 
 
 #Input and Output
-omega = np.linspace(-3*np.pi,3*np.pi,1e2)
+omega = np.linspace(-3*np.pi,3*np.pi,int(1e2))
 
 #subplots
 plt.plot(omega, abs(H(np.exp(1j*omega))))
@@ -25,12 +22,8 @@ plt.xlabel('$\omega$')
 plt.ylabel('$|H(e^{\jmath\omega})| $')
 plt.grid()# minor
 
-#if using termux
-plt.savefig('../figs/dtft.pdf')
-plt.savefig('../figs/dtft.eps')
-subprocess.run(shlex.split("termux-open ../figs/dtft.pdf"))
-#else
-#plt.show()
+
+plt.show()
 
 
 

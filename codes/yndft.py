@@ -1,9 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#If using termux
-import subprocess
-import shlex
-#end if
+
 
 
 N = 14
@@ -42,9 +39,5 @@ plt.title('Filter Output using DFT')
 plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()# minor
-#
-#If using termux
-plt.savefig('../figs/yndft.pdf')
-subprocess.run(shlex.split("termux-open ../figs/yndft.pdf"))
-#else
-#plt.show()
+
+plt.show()
