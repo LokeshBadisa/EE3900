@@ -587,10 +587,30 @@ Compute
 X(k) \define \sum _{n=0}^{N-1}x(n) e^{-\j2\pi kn/N}, \quad k = 0,1,\dots, N-1
 \end{equation}
 and $H(k)$ using $h(n)$.
+\solution The following code plots Fig. \ref{fig:xkhk}. 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/xkhk}
+\caption{$X(k) ,H(k)$ from the DFT}
+\label{fig:xkhk}
+\end{figure}
+\begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/xkhkdft.py
+\end{lstlisting}
 \item Compute 
 \begin{equation}
 Y(k) = X(k)H(k)
 \end{equation}
+\solution The following code plots Fig. \ref{fig:yk}. 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/yk}
+\caption{$Y(k)$ from the DFT}
+\label{fig:yk}
+\end{figure}
+\begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/ykdft.py
+\end{lstlisting}
 \item Compute
 \begin{equation}
  y\brak{n}={\frac {1}{N}}\sum _{k=0}^{N-1}Y\brak{k}\cdot e^{\j 2\pi kn/N},\quad n = 0,1,\dots, N-1
