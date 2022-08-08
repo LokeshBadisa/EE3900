@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 double *readData(char *file, int size) ;
-
+void createDat(char *file, int count,double *y);
 
 // Reads data from file into array and returns the array
 double *readData(char *file, int size) {
