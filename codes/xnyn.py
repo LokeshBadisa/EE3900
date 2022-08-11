@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x=np.loadtxt('xn.dat')
-y=np.loadtxt('yn.dat')
+x=np.loadtxt('codes/xn.dat')
+y=np.loadtxt('codes/yn.dat')
 k=20
 
 #subplots

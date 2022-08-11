@@ -1,4 +1,3 @@
-
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 %
 \usepackage{setspace}
@@ -51,7 +50,7 @@
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \renewcommand\thesectiondis{\arabic{section}}
 \renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
 \renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
@@ -87,10 +86,8 @@ columns=fullflexible
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
-
 \bibliographystyle{IEEEtran}
 %\bibliographystyle{ieeetr}
-
 \providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
 \providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
 \providecommand{\mbf}{\mathbf}
@@ -115,7 +112,6 @@ columns=fullflexible
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 \providecommand{\ztrans}{\overset{\mathcal{Z}}{ \rightleftharpoons}}
-
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
@@ -128,22 +124,16 @@ columns=fullflexible
 \makeatletter
 \@addtoreset{figure}{problem}
 \makeatother
-
 \let\StandardTheFigure\thefigure
 %\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
-
-
 %\numberwithin{figure}{subsection}
-
 \def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
      \def\rightbox#1{\makebox[0in][r]{#1}}
      \def\centbox#1{\makebox[0in]{#1}}
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
-
 \vspace{3cm}
-
 \title{ 
 %\logo{
 Digital Signal Processing
@@ -153,8 +143,6 @@ Digital Signal Processing
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
-
-
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 %\title{Matrix Analysis through Octave}
@@ -168,9 +156,11 @@ Digital Signal Processing
 % a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
 % was not built to handle multiple paragraphs
 %
-
-\author{ Lokesh Badisa %<-this  stops a space
-% <-this % stops a space
+\author{ G V V Sharma$^{*}$ %<-this  stops a space
+\thanks{*The author is with the Department
+of Electrical Engineering, Indian Institute of Technology, Hyderabad
+502285 India e-mail:  gadepall@iith.ac.in.  All content in the manuscript is 
+released under GNU GPL.  Free to use for anything. }% <-this % stops a space
 %\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
 %\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 }
@@ -191,9 +181,6 @@ Digital Signal Processing
 % you are supposed to have spaces between the names. For what it is worth,
 % this is a minor point as most people would not even notice if the said evil
 % space somehow managed to creep in.
-
-
-
 % The paper headers
 %\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
 %{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
@@ -204,34 +191,20 @@ Digital Signal Processing
 % *** name in the headers of peer review papers.                   ***
 % You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
 % you desire.
-
-
-
-
 % If you want to put a publisher's ID mark on the page you can do it like
 % this:
 %\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
 % Remember, if you use this you must call \IEEEpubidadjcol in the second
 % column for its text to clear the IEEEpubid mark.
-
-
-
 % make the title area
 \maketitle
-
 %\newpage
-
 \tableofcontents
-
 %\renewcommand{\thefigure}{\thesection.\theenumi}
 %\renewcommand{\thetable}{\thesection.\theenumi}
-
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
-
 %\renewcommand{\theequation}{\thesection}
-
-
 \bigskip
 
 \begin{abstract}
@@ -361,7 +334,15 @@ resulting in \eqref{eq:shift1}. Similarly, it can be shown that
 \label{eq:z_trans_shift}
 	{\mathcal {Z}}\{x(n-k)\} = z^{-k}X(z)
 \end{equation}
-
+\item Obtain $X(z)$ for x(n) define in problem 3.1.
+\solution From \eqref{eq:z_trans},
+\begin{align}
+X(z)&={\mathcal{Z}}\{x(n)\}=\sum_{n=-\infty}^{\infty}x(n)z^{-n}\\
+\label{eq:genf}
+&=\sum_{n=0}^{\infty}x(n)z^{-n}\\
+&=1\cdot z^{-1}+2\cdot z^{-2}+3\cdot z^{-3}+4\cdot z^{-4}+2\cdot z^{-5}+1\cdot z^{-6}\\
+&=\frac{z^5+2z^4+3z^3++4z^2+2z+1}{z^6}
+\end{align}
 \item Find
 %
 \begin{equation}
@@ -374,7 +355,7 @@ from  \eqref{eq:iir_filter} assuming that the $Z$-transform is a linear operatio
 \begin{align}
 Y(z) + \frac{1}{2}z^{-1}Y(z) &= X(z)+z^{-2}X(z)
 \\
-\implies \frac{Y(z)}{X(z)} &= \frac{1 + z^{-2}}{1 + \frac{1}{2}z^{-1}}
+\implies H\brak{z} = \frac{Y(z)}{X(z)} &= \frac{1 + z^{-2}}{1 + \frac{1}{2}z^{-1}}
 \label{eq:freq_resp}
 \end{align}
 %
@@ -430,7 +411,7 @@ From \eqref{eq:unit_step},
 &= \frac{1}{1-\frac{a}{z}}\\
 &= \frac{1}{1-az^{-1}} \quad \abs{z} > \abs{a}
 \end{align}
-using the fomula for the sum of an infinite geometric progression.
+using the formula for the sum of an infinite geometric progression.
 
 %
 \item 
@@ -438,10 +419,27 @@ Let
 \begin{equation}
 H\brak{e^{\j \omega}} = H\brak{z = e^{\j \omega}}.
 \end{equation}
-Plot $\abs{H\brak{e^{\j \omega}}}$.  Comment.  $H(e^{\j \omega})$ is
+Plot $\abs{H\brak{e^{\j \omega}}}$. Is it periodic? If so,find the period. $H(e^{\j \omega})$ is
 known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
 \\
-\solution The following code plots Fig. \ref{fig:dtft}.
+\solution 
+\begin{align}
+H\brak{e^{\j \omega}} &= H\brak{z = e^{\j \omega}}\\
+&= \frac{1 + e^{-2 \j \omega}}{1 + \frac{1}{2} e^{-\j \omega}}\\
+&= \frac{2\brak{1 + e^{-2 \j \omega}}}{2 + e^{-\j \omega}}\\
+&= \frac{2\brak{1 + \cos{2 \omega}-\j \sin{2\omega}}}{2 + \cos{\omega}-\j \sin{ \omega}}\\
+&= \frac{2\abs{\brak{2\cos^2 \omega-\j \sin{2\omega}}}}{\abs{2 + \cos{\omega}-\j \sin{ \omega}}}\\
+&= \frac{2\sqrt{4\cos^4 \omega+4\sin^2 \omega \cos^2 \omega}}{\sqrt{\brak{2 + \cos \omega}^2+ \sin^2 \omega }}\\
+&=\frac{4\cos\omega}{\sqrt{5 + 4\cos \omega}}\\
+\abs{H\brak{e^{\j \omega}} }&=\frac{\abs{4\cos\omega}}{\sqrt{5 + 4\cos \omega}}
+\end{align}
+Since $\abs{H(e^{j\omega})}$ is function of cosine we can say it is periodic.And from the plot \ref{fig:dtft} we can say that it is symmetric about $\omega = 0\brak{\text{even function}}$ and it is periodic with period $2\pi$.You can find the same from the theoritical expression $\abs{H\brak{e^{j \omega}}}$, 
+       \begin{align}
+         H(e^{\j \omega}) &= H(e^{j(-\omega)})\brak{\text{cos is an even function}}
+       \end{align}
+    And to find period, the period of $\abs{\cos(\omega)}$ is $\pi$ and the period of $\sqrt{5 + 4\cos\brak{\omega}}$ is $2\pi$. So the period of division of both will be $2\pi$.
+     This gives us the period of $\abs{H(e^{j\omega})}$ as $2\pi$
+ The following code plots Fig. \ref{fig:dtft}.
 \begin{lstlisting}
 wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/dtft.py
 \end{lstlisting}
@@ -451,10 +449,54 @@ wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing
 \caption{$\abs{H\brak{e^{\j\omega}}}$}
 \label{fig:dtft}
 \end{figure}
+
+\item Express $h(n)$ in terms of $H\brak{e^{\j \omega}}$.\\
+\solution 
+\begin{align}
+h(n) = \frac{1}{2\pi}\int_{-\pi}^
+{\pi}H\brak{\j \omega}e^{\j \omega n}\,dw
+\end{align}
 \end{enumerate}
 
 \section{Impulse Response}
 \begin{enumerate}[label=\thesection.\arabic*]
+\item Using long division, 
+find
+		\begin{align}
+			h(n), \quad n < 5
+		\end{align}
+		for H(z) in 
+		\eqref{eq:freq_resp}.
+\solution Using \eqref{eq:freq_resp},
+\begin{align}
+%\label{eq:longd}
+H\brak{z} = \frac{Y(z)}{X(z)} &= \frac{1 + z^{-2}}{1 + \frac{1}{2}z^{-1}}\\
+&=\frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{z^{-2}}{1 + \frac{1}{2}z^{-1}} \\
+\end{align}		
+Using the Infinite geometric progression,
+  \begin{equation}
+  \label{eq:longd1}
+  1 - \frac{1}{2}z^{-1} + \frac{1}{4}z^{-2} - \frac{1}{8}z^{-3} + \frac{1}{16}z^{-4} - \frac{1}{32}z^{-5} + \cdots = \frac{1}{1 + \frac{1}{2}z^{-1}}
+  \end{equation}
+  Parallely,
+  \begin{align}
+  \label{eq:longd2}
+    \frac{z^{-2}}{1 + \frac{1}{2}z^{-1}} = z^{-2} -\frac{1}{2}z^{-3}+\frac{1}{4}z^{-4}-\frac{1}{8}z^{-5}+\cdots
+  \end{align}
+  Considering \eqref{eq:longd1} and \eqref{eq:longd2},
+  \begin{align}
+  \label{eq:longd}
+  H\brak{z} &= 1-\frac{1}{2}z^{-1}+\frac{5}{4}z^{-2}-\frac{5}{8}z^{-3}+\frac{5}{16}z^{-4}-\frac{5}{32}z^{-5}+\cdots
+  \end{align}
+  Comparing \eqref{eq:longd} with \eqref{eq:genf},
+  \begin{align}
+  h(0)=1\\
+  h(1)=-\frac{1}{2}\\
+  h(2)=\frac{5}{4}\\
+  h(3)=-\frac{5}{8}\\
+  h(4)=\frac{5}{16}\\
+  h(5)=-\frac{5}{32}
+  \end{align}
 \item \label{prob:impulse_resp}
 Find an expression for $h(n)$ using $H(z)$, given that 
 %in Problem \ref{eq:ztransab} and \eqref{eq:anun}, given that
@@ -472,9 +514,11 @@ H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
 \implies h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
 using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
-\item Sketch $h(n)$. Is it bounded? Convergent? 
+\item Sketch $h(n)$. Is it bounded? Justify theoretically.
 \\
-\solution The following code plots Fig. \ref{fig:hn}.
+\solution 
+
+The following code plots Fig. \ref{fig:hn}.
 \begin{figure}[!ht]
 \begin{center}
 \includegraphics[width=\columnwidth]{./figs/hn}
@@ -485,31 +529,63 @@ using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
 \begin{lstlisting}
 wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/hn.py
 \end{lstlisting}
-$h(n)$ is definitely bounded and convergent,
+
 \begin{align}
-\lim_{n\to\infty}h(n)&=\lim_{n\to\infty}\brak{-\frac{1}{2}}^{n}u(n) + \lim_{n\to\infty}\brak{-\frac{1}{2}}^{n-2}u(n-2)\\
-&=0
+\lim_{n\to\infty}h(n)&=\lim_{n\to\infty}\brak{-\frac{1}{2}}^{n}u(n) + \lim_{n\to\infty}\brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
+\begin{equation}
+h(n)
+=
+\begin{cases}
+5\brak{\frac{-1}{2}}^n & n \ge 2
+\\
+\brak{\frac{-1}{2}}^n & 0\le n < 2
+\\
+0 & n<0
+\end{cases}
+\end{equation}
+Maximum value and minimum value are always bounded in this case.
+$\therefore h(n)$ is bounded
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=\columnwidth]{./figs/hn}
 \caption{$h(n)$ as the inverse of $H(z)$}
 \label{fig:hn}
 \end{figure}
+ \item Is it convergent? Justify using the ratio test.
+\solution
+\begin{align}
+h(n+1)&=\brak{-\frac{1}{2}}^{n+1}u(n+1) + \brak{-\frac{1}{2}}^{n-1}u(n-1)
+\end{align}
+According to ratio test, $L$ is given by $\lim_{n\to \infty}\abs{\frac{h(n+1)}{h(n)}}$, if $L < 1$ then h(n) is convergent.
+\begin{align}
+L&=\lim_{n\to \infty}\abs{\frac{h(n+1)}{h(n)}}\\
+&=\lim_{n\to \infty}\abs{\frac{\brak{-\frac{1}{2}}^{n+1}u(n+1) + \brak{-\frac{1}{2}}^{n-1}u(n-1)}{\brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)}}\\
+&=\abs{\frac{-\frac{1}{2} + {-\frac{1}{2}}^{-1}}{1 + {-\frac{1}{2}}^-2}}\\
+&=\abs{\frac{-\frac{1}{2}-2}{1+4}}\\
+&=\abs{\frac{\frac{-5}{2}}{5}}\\
+&=\frac{1}{2}
+\end{align}
+As $L < 1$, $h(n)$ is convergent.
+\item Verify the above result using a python code.
+\solution The following code determines if it is convergent or not:
+\begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/5.5.py
+\end{lstlisting}
 %
 \item The system with $h(n)$ is defined to be stable if
 \begin{equation}
 \sum_{n=-\infty}^{\infty}h(n) < \infty
 \end{equation}
-Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?
-\solution The system defined by (3.2) is stable for the impulse response in (5.1),
+Is the system defined by \eqref{eq:iir_filter} stable for the impulse response in \eqref{eq:impulse_resp}?\\
+\solution 
 \begin{align}
 \sum_{n=-\infty}^{\infty}h(n)&= \sum_{n=0}^{\infty}h(n)\\
 &=\sum_{n=0}^{\infty}\brak{-\frac{1}{2}}^{n}u(n) + \sum_{n=0}^{\infty}\brak{-\frac{1}{2}}^{n-2}u(n-2)\\
 &=2 \brak{ \frac{1}{1+\frac{1}{2}}}\\
 &=\frac{4}{3}
 \end{align}
-
+As $\sum_{n=-\infty}^{\infty}h(n)=\frac{4}{3}$ is less than $\infty$, the system defined by (3.2) is stable for the impulse response in (5.1).
 %
 \item 
 Compute and sketch $h(n)$ using 
@@ -563,18 +639,20 @@ wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing
 \caption{$y(n)$ from the definition of convolution}
 \label{fig:ynconv}
 \end{figure}
-
+\item Express the above convolution using a toeplitz matrix.
+\solution
+\begin{align}
+\vec{y} = \vec{x} \circledast \vec{h}\\
+& \vec{y} = \myvec{ h_1 & 0 & . & . & . & 0 \\ h_2 & h_1 & . & . & . & 0 \\ h_3 & h_2 & h_1 & . & . & 0 \\ h_{m-1} & . & . & . & h_2 & h_1 \\ h_m & h_{m-1} &. & . & . & h_2 \\ . & . &. & . & . & . \\ . & . & . & . & . & . \\ 0 & 0 & . & . & . & h_m } \myvec{x_1 \\ x_2 \\ . \\ . \\ . \\ . \\ x_n}
+\end{align}
 \item Show that
 \begin{equation}
 y(n) =  \sum_{n=-\infty}^{\infty}x(n-k)h(k)
 \end{equation}
-\solution \begin{align}
-y(n) &=  x(n)*h(n)
-\end{align}
-Since convolution is commutative,
-\begin{align}
-y(n) &= h(n)*x(n)\\
-&=\sum_{n=-\infty}^{\infty}x(n-k)h(k)
+\solution Substitute $k\to n-k$ then \begin{align}
+y(n) &=  x(n)*h(n)\\
+&=\sum_{n=-\infty}^{\infty}x(k)h(n-k)
+&= \sum_{n=-\infty}^{\infty}x(n-k)h(k)
 \end{align}
 \end{enumerate}
 

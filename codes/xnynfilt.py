@@ -1,10 +1,6 @@
 import numpy as np
 from scipy import signal
 import matplotlib.pyplot as plt
-#If using termux
-import subprocess
-import shlex
-#end if
 
 
 x1 = np.array([1.0,2.0,3.0,4.0,2.0,1.0])
