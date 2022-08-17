@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 
-N = 14
+N = 20
 n = np.arange(N)
 fn=(-1/2)**n
 hn1=np.pad(fn, (0,2), 'constant', constant_values=(0))
@@ -12,7 +12,7 @@ h = hn1+hn2
 
 
 xtemp=np.array([1.0,2.0,3.0,4.0,2.0,1.0])
-x=np.pad(xtemp, (0,8), 'constant', constant_values=(0))
+x=np.pad(xtemp, (0,14), 'constant', constant_values=(0))
 
 X = np.zeros(N) + 1j*np.zeros(N)
 for k in range(0,N):
@@ -48,6 +48,5 @@ plt.savefig('/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Process
 plt.savefig('/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/figs/xkhk.eps')
 
 plt.show()    
-
 
 

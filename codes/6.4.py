@@ -1,17 +1,28 @@
+
+import scipy.fft 
 import numpy as np
-import matplotlib.pyplot as plt
+  
+# sequence 
+xn = [1,2,3,4,2,1]
+  
+# fft of x
+xtransform = scipy.fft.fft(xn)
+print (xtransform)
 
-
-
-N = 14
+# sequence 
+N = 20
 n = np.arange(N)
 fn=(-1/2)**n
 hn1=np.pad(fn, (0,2), 'constant', constant_values=(0))
 hn2=np.pad(fn, (2,0), 'constant', constant_values=(0))
 h = hn1+hn2
+  
+# fft of x
+htransform = scipy.fft.fft(h)
+print (htransform)
 
 xtemp=np.array([1.0,2.0,3.0,4.0,2.0,1.0])
-x=np.pad(xtemp, (0,8), 'constant', constant_values=(0))
+x=np.pad(xtemp, (0,14), 'constant', constant_values=(0))
 
 X = np.zeros(N) + 1j*np.zeros(N)
 for k in range(0,N):
@@ -26,16 +37,6 @@ Y = np.zeros(N) + 1j*np.zeros(N)
 for k in range(0,N):
 	Y[k] = X[k]*H[k]
 
-#print(X)
-Y = np.real(Y)/N
-#plots
-plt.stem(range(0,N),Y)
-plt.title('Filter Output using DFT')
-plt.xlabel('$k$')
-plt.ylabel('$Y(k)$')
-plt.grid()# minor
+     
+print(scipy.fft.ifft(Y))
 
-plt.savefig('/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/figs/yk.pdf')
-plt.savefig('/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/figs/yk.eps')
-
-plt.show()

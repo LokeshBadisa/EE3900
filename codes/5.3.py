@@ -1,23 +1,26 @@
+#Code by GVV Sharma
+#November 20, 2018
+#released under GNU GPL
 import numpy as np
 import matplotlib.pyplot as plt
 
 
+n = np.arange(10)
+fn=(-1/2)**n
+hn1=np.pad(fn, (0,2), 'constant', constant_values=(0))
+hn2=np.pad(fn, (2,0), 'constant', constant_values=(0))
+
+print(fn)
+plt.stem(np.arange(12), hn1+hn2)
+plt.title('Filter Impulse Response')
+plt.xlabel('$n$')
+plt.ylabel('$h(n)$')
+plt.grid()
 
 
-x=np.array([1.0,2.0,3.0,4.0,2.0,1.0])
-k = 20
-y = np.zeros(200)
+plt.show()
 
 
-y[0] = x[0]
-y[1] = -0.5*y[0]+x[1]
 
-for n in range(2,k-1):
-	if n < 6:
-		y[n] = -0.5*y[n-1]+x[n]+x[n-2]
-	elif n > 5 and n < 8:
-		y[n] = -0.5*y[n-1]+x[n-2]
-	else:
-		y[n] = -0.5*y[n-1]
-print(y[20])
+
 

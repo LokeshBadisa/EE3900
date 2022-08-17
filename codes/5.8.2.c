@@ -31,7 +31,7 @@ else{
 //hn1=np.pad(fn, (0,2), 'constant', constant_values=(0))
 //hn2=np.pad(fn, (2,0), 'constant', constant_values=(0))
 //h = hn1+hn2
-double h[n+2];
+double *h = (double *)malloc((n+2)*sizeof(double));
 for(int i=0;i<n+2;i++){
 h[i]=hn1[i]+hn2[i];
 }
@@ -59,9 +59,10 @@ for(int i=0;i<nx+nh-1;i++){
 printf("%lf\n",y[i]);
 }
 createDat("ynconv.dat",nx+nh-1,y);
-
+createDat("hn.dat",n+2,h);
 //print(y)
 free(x);
 free(y);
+free(h);
 return 0;
 }
