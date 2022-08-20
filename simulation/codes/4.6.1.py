@@ -17,8 +17,8 @@ plt.xlabel('$\omega$')
 plt.ylabel('$|H(e^{\jmath\omega})| $')
 plt.grid()
 plt.legend(loc = 'upper right')
-plt.savefig('figs/dtft.eps')
-plt.savefig('figs/dtft.pdf')
+#plt.savefig('figs/dtft.eps')
+#plt.savefig('figs/dtft.pdf')
 plt.show()
 
 
