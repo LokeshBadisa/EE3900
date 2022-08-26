@@ -1,18 +1,17 @@
-from sympy import limit,Symbol
+from sympy import Sum,var
 
-def usf(n,k):
-    if n < k :
-        return 0
-    else:
+
+def usf(n):
         return 1
+   
 
-def h(n,k):
-    return ((-0.5)**(n+k))*usf(n,k) + ((-0.5)**(n-2+k))*usf(n,2+k)
+def h(n):
+    return ((-0.5)**(n))*usf(n) + ((-0.5)**(n-2))*usf(n-2)
 
-n = Symbol('n') 
-L = h(n,1)/h(n,0)
-final=limit(L, n, oo)
+var("n")
+expr1 = Sum(h(n),(n,0,float('inf')))
+print(expr1.doit())
 
-print(final)
+
 
  

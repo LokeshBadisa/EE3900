@@ -1,5 +1,7 @@
 double *readData(char *file, int size) ;
 void createDat(char *file, int count,double *y);
+double delta(int n);
+double hnthroughdef(int n);
 
 // Reads data from file into array and returns the array
 double *readData(char *file, int size) {
@@ -28,4 +30,24 @@ void createDat(char *file, int count,double *y) {
 	}
 	fclose(fp);
 	return;
+}
+
+//Unit Sample Sequence
+double delta(int n){
+	if(n==0){
+	  return 1;
+}
+	else {
+	 return 0;  
+	}
+}
+
+//Calculating h(n) through given definition
+double hnthroughdef(int n){
+	if(n<0) {
+		return 0;
+	}
+	else {
+		return delta(n)+delta(n-2)-(0.5*hnthroughdef(n-1));
+	}
 }

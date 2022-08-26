@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{polynom}
 \usepackage{capt-of}
+\usepackage{siunitx}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
@@ -314,9 +315,9 @@ known as the {\em Discret Time Fourier Transform} (DTFT) of $x(n)$.
 H\brak{e^{\j \omega}} &= H\brak{z = e^{\j \omega}}\\
 &= \frac{1 + e^{-2 \j \omega}}{1 + \frac{1}{2} e^{-\j \omega}}\\
 &= \frac{2\brak{1 + e^{-2 \j \omega}}}{2 + e^{-\j \omega}}\\
-&= \frac{2\brak{1 + \cos{2 \omega}-\j \sin{2\omega}}}{2 + \cos{\omega}-\j \sin{ \omega}}\\
-&= \frac{2\abs{\brak{2\cos^2 \omega-\j \sin{2\omega}}}}{\abs{2 + \cos{\omega}-\j \sin{ \omega}}}\\
-&= \frac{2\sqrt{4\cos^4 \omega+4\sin^2 \omega \cos^2 \omega}}{\sqrt{\brak{2 + \cos \omega}^2+ \sin^2 \omega }}\\
+&= \frac{2\brak{1 + \cos{2 \omega}-\j n{2\omega}}}{2 + \cos{\omega}-\j n{ \omega}}\\
+&= \frac{2\abs{\brak{2\cos^2 \omega-\j n{2\omega}}}}{\abs{2 + \cos{\omega}-\j n{ \omega}}}\\
+&= \frac{2\sqrt{4\cos^4 \omega+4n^2 \omega \cos^2 \omega}}{\sqrt{\brak{2 + \cos \omega}^2+ n^2 \omega }}\\
 &=\frac{4\cos\omega}{\sqrt{5 + 4\cos \omega}}\\
 \abs{H\brak{e^{\j \omega}} }&=\frac{\abs{4\cos\omega}}{\sqrt{5 + 4\cos \omega}}
 \end{align}
@@ -404,12 +405,7 @@ H(z) &= \frac{1}{1 + \frac{1}{2}z^{-1}} + \frac{ z^{-2}}{1 + \frac{1}{2}z^{-1}}
 \implies h(n) &= \brak{-\frac{1}{2}}^{n}u(n) + \brak{-\frac{1}{2}}^{n-2}u(n-2)
 \end{align}
 using \eqref{eq:anun} and \eqref{eq:z_trans_shift}.
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/hn}
-\caption{$h(n)$ as the inverse of $H(z)$}
-\label{fig:hn}
-\end{figure}
+
 \item Sketch $h(n)$. Is it bounded? Justify theoretically.
 \\
 \solution 
@@ -601,10 +597,13 @@ wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing
 \end{lstlisting}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/yndft}
+\includegraphics[width=\columnwidth]{./figs/6.4}
 \caption{$y(n)$ from the DFT}
 \label{fig:yndft}
 \end{figure}
+
+If you observe both the graphs, they are close to each other but not same.
+
 
 \item Repeat the previous exercise by computing $X(k), H(k)$ and $y(n)$ through FFT and 
 IFFT.
@@ -613,42 +612,180 @@ IFFT.
 wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/6.4.py
 \end{lstlisting}
 \item Wherever possible, express all the above equations as matrix equations.
-\item Verify the above equations by generating the DFT matrix in python.
-\end{enumerate}
-%
-\section{Exercises}
-
-Answer the following questions by looking at the python code in Problem \ref{prob:output}.
-\begin{enumerate}[label=\thesection.\arabic*]
-\item
-The command
-\begin{lstlisting}
-	output_signal = signal.lfilter(b, a, input_signal)
+	
+	\solution
+	\begin{align}
+		\vec{x} &= \myvec{x_0 & x_1	 & \cdots & x_{N-1}}^\top \\
+		\vec{h} &= \myvec{x_0 & x_1	 & \cdots & x_{N-1}}^\top \\
+		\vec{y} &= \vec{x} \circledast \vec{h} \\
+		\myvec{y_1 \\ y_2 \\ \vdots \\ y_{2N - 1}} &= \myvec{
+			h_0 & 0 & 0 & \cdots & 0 \\
+			h_1 & h_0 & 0 & \cdots & 0 \\
+			h_2 & h_1 & h_0 & \cdots & 0 \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			h_{N-1} & h_{N-2} & h_{N-3} & \cdots & h_0 \\
+			0 & h_{N-1} & h_{N-2} & \cdots & h_1 \\
+			0 & 0 & h_{N-1} & \cdots & h_2 \\
+			\vdots & \vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & 0 & \cdots & h_{N-1}
+		}		
+		\myvec{x_1\\x_2\\ \vdots \\x_N}
+	\end{align}
+	
+	The convolution can be written using a Toeplitz matrix. 
+	
+	Consider the DFT matrix
+	\begin{align}
+		\vec{W} = \myvec{
+			1 & 1 & 1 & 1 & \cdots & 1 \\
+			1 & \omega & \omega^2 & \omega^3 & \cdots & \omega^{N-1} \\
+			1 & \omega^2 & \omega^4 & \omega^6 & \cdots & \omega^{2(N-1)} \\
+			1 & \omega^3 & \omega^6 & \omega^9 & \cdots & \omega^{3(N-1)} \\
+			\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\ 
+			1 & \omega^{N-1} & \omega^{2(N-1)} & \omega^{3(N-1)} & \cdots & \omega^{(N-1)(N-1)}
+		}
+	\end{align}
+	
+	where $\omega = e^{-\j 2\pi/N}$ is the $N^{\mathrm{th}}$ root of unity
+	
+	Then the discrete Fourier transforms of $\vec{x}$ and $\vec{h}$ are given by
+	\begin{align}
+		\vec{X} &= \vec{W} \vec{x} \\
+		\vec{H} &= \vec{W} \vec{h}
+	\end{align}
+	
+	$\vec{Y}$ is then given by
+	\begin{equation}
+		\vec{Y} = \vec{X} \circ \vec{H}
+	\end{equation}
+	where $\circ$ denotes the Hadamard product (element-wise multiplication)
+	
+	But $\vec{Y}$ is the discrete Fourier transform of the filter output $\vec{y}$
+	\begin{equation}
+		\vec{Y} = \vec{W} \vec{y}
+	\end{equation}
+	
+	Thus,
+	\begin{align}
+		\vec{W} \vec{y} &= \vec{X} \circ \vec{H} \\
+		\implies \vec{y} &= \vec{W}^{-1} \brak{\vec{X} \circ \vec{H}} \\
+		&= \vec{W}^{-1} \brak{\vec{W} \vec{x} \circ \vec{W} \vec{h}}
+	\end{align}
+	This is the inverse discrete Fourier transform of $\vec{Y}$
+	
+	\item Verify the above equations by generating the DFT matrix in Python.
+	
+	\solution Download the following Python code that plots Fig. \ref{fig-6.5}
+	\begin{lstlisting}
+		https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/6.5.py
 	\end{lstlisting}
-in Problem \ref{prob:output} is executed through the following difference equation
-\begin{equation}
-\label{eq:iir_filter_gen}
- \sum _{m=0}^{M}a\brak{m}y\brak{n-m}=\sum _{k=0}^{N}b\brak{k}x\brak{n-k}
-\end{equation}
-%
-where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace
-\textbf{signal.filtfilt} with your own routine and verify.
-%
-\item Repeat all the exercises in the previous sections for the above $a$ and $b$.
+	
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.8\columnwidth]{./figs/6.5.png}
+		%\caption{Plot of $y(n)$ by DFT matrix}
+		\label{fig-6.5}	
+	\end{figure}
+	
+	The plot is close to that obtained in Fig. \ref{fig:ynconv}
 
-\item What is the sampling frequency of the input signal?
-\\
-\solution
-Sampling frequency(fs)=44.1kHZ.
-\item
-What is type, order and  cutoff-frequency of the above butterworth filter
-\\
-\solution
-The given butterworth filter is low pass with order=2 and cutoff-frequency=4kHz.
-%
-\item
-Modifying the code with different input parameters and to get the best possible output.
-%
-\end{enumerate}
-
+	\end{enumerate}
+	
+	\section{Exercises}
+	Answer the following questions by looking at the python code in Problem \ref{prob:output}
+	
+	\begin{enumerate}[label=\thesection.\arabic*]
+	\item The command
+	\begin{lstlisting}
+		output_signal = signal.lfilter(b, a, input_signal)
+	\end{lstlisting}
+	in Problem \ref{prob:output} is executed through the following difference equation
+	\begin{equation}
+		\label{eq:iir_filter_gen}
+ 		\sum _{m=0}^{M}a\brak{m}y\brak{n-m}=\sum _{k=0}^{N}b\brak{k}x\brak{n-k}
+	\end{equation}
+	where the input signal is $x(n)$ and the output signal is $y(n)$ with initial values all 0. Replace \textbf{signal.filtfilt} with your own routine and verify.
+	
+	\solution On taking the $Z$-transform on both sides of the difference equation
+	\begin{align}
+		\sum _{m=0}^{M}a\brak{m} z^{-m} Y(z) &= \sum _{k=0}^{N}b\brak{k} z^{-k} X(z) \\
+		\implies H(z) = \frac{Y(z)}{X(z)} &= \frac{\sum _{k=0}^{N}b\brak{k} z^{-k}}{\sum _{m=0}^{M}a\brak{m} z^{-m	}}
+	\end{align}
+	
+	For obtaining the discrete Fourier transform, put $z = \j \frac{2\pi i}{I}$ where $I$ is the length of the input signal and $i = 0, 1, \ldots, I-1$
+	
+	Download the following Python code that does the above
+	\begin{lstlisting}
+		wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/7.1.py
+	\end{lstlisting}
+	
+	\item Repeat all the exercises in the previous sections for the above $a$ and $b$
+	
+	\solution The polynomial coefficients obtained are
+	\begin{align}
+		\vec{a} = \myvec{1.000 \\ -2.519 \\ 2.561 \\ -1.206 \\ 0.220} \qquad
+		\vec{b} = \myvec{0.003 \\ 0.014 \\ 0.021 \\ 0.014 \\ 0.003}
+	\end{align}
+	
+	The difference equation is then given by
+	\begin{equation}
+		\vec{a}^\top \vec{y} = \vec{b}^\top \vec{x} 
+	\end{equation}
+	
+	where
+	\begin{align}
+		\vec{y} = \myvec{y(n) \\ y(n-1) \\ y(n-2) \\ y(n-3) \\ y(n-4)} \qquad
+		\vec{x} = \myvec{x(n) \\ x(n-1) \\ x(n-2) \\ x(n-3) \\ x(n-4)}
+	\end{align}
+	
+	Download the following Python code
+	\begin{lstlisting}
+		wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/7.2.py
+	\end{lstlisting}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=\columnwidth]{./figs/7.2.1.png}
+		\caption{Plot of $y(n)$}
+		\label{fig-7.2.1}	
+	\end{figure}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=\columnwidth]{./figs/7.2.2.png}
+		\caption{Plot of $\abs{H(e^{\j\omega})}$}
+		\label{fig-7.2.2}	
+	\end{figure}
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=\columnwidth]{./figs/7.2.3.png}
+		\caption{Plot of $h(n)$}
+		\label{fig-7.2.3}	
+	\end{figure}
+	
+	\item What is the sampling frequency of the input signal?
+	
+	\solution The sampling frequency of the input signal is \SI{44100}{\hertz} = \SI{44.1}{\kilo\hertz}
+	
+	\item What is the type, order and cutoff frequency of the above Butterworth filter?
+	
+	\solution 
+	
+	Type: low-pass
+	
+	Order: 4
+	
+	Cutoff frequency: \SI{4000}{\hertz} = \SI{4}{\kilo\hertz}
+	
+	\item Modify the code with different input parameters to get the best possible output.
+	
+	\solution
+	
+	Order: 10
+	
+	Cutoff frequency: \SI{3000}{\hertz} = \SI{3}{\kilo\hertz}
+	
+	\end{enumerate}
 \end{document}
