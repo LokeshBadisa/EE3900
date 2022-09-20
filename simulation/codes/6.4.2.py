@@ -1,24 +1,10 @@
 import numpy as np
+from scipy.fft import fft, ifft
 import matplotlib.pyplot as plt
-
-x=np.array([1.0,2.0,3.0,4.0,2.0,1.0])
-k = 20
-y = np.zeros(20)
-
-
-y[0] = x[0]
-y[1] = -0.5*y[0]+x[1]
-
-for n in range(2,k):
-	if n < 6:
-		y[n] = -0.5*y[n-1]+x[n]+x[n-2]
-	elif n > 5 and n < 8:
-		y[n] = -0.5*y[n-1]+x[n-2]
-	else:
-		y[n] = -0.5*y[n-1]
-
-x=np.arange(0,k)
-plt.plot(x,y,'o',markersize=12,label='Difference Equation')
+#If using termux
+#import subprocess
+#import shlex
+#end if
 
 N = 20
 n = np.arange(N)
@@ -34,7 +20,6 @@ X = np.zeros(N) + 1j*np.zeros(N)
 for k in range(0,N):
 	for n in range(0,N):
 		X[k]+=x[n]*np.exp(-1j*2*np.pi*n*k/N)
-
 H = np.zeros(N) + 1j*np.zeros(N)
 for k in range(0,N):
 	for n in range(0,N):
@@ -51,12 +36,25 @@ for k in range(0,N):
 
 #print(X)
 y = np.real(y)/N
-x=np.arange(0,k+1)
-plt.plot(x,y,'o',markersize=7,label='IDFT')
+y_prev = np.loadtxt('simulation/codes/yn.dat', dtype='double')
 
-y=np.fft.ifft(Y)
-y = np.real(y)
-plt.plot(x,y,'o',markersize=3,label='IFFT')
-plt.legend()
-plt.savefig('simulation/figs/6.4.1.eps')
-plt.show()
+#plots
+plt.stem(range(0,N),y,markerfmt='C0o')
+plt.stem(range(0,N),y_prev[:20],markerfmt='C1o')
+
+X_fft = fft(x)
+H_fft = fft(h)
+Y_fft = H_fft*X_fft
+y_ifft = ifft(Y_fft).real
+#plots
+plt.stem(range(0,20),y_ifft[:14],markerfmt='C2o')
+plt.xlabel('$n$')
+plt.ylabel('$y(n)$')
+plt.grid()# minor
+plt.legend(['From IDFT', 'From difference equation', 'From IFFT'])
+
+#If using termux
+plt.savefig('simulation/figs/6.4.2.png')
+#subprocess.run(shlex.split("termux-open ../figs/yndft.pdf"))
+#else
+#plt.show()

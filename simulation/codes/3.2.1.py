@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 x=np.array([1.0,2.0,3.0,4.0,2.0,1.0])
 k = 20
-y = np.zeros(200)
+y = np.zeros(20)
 
 
 y[0] = x[0]

@@ -1,0 +1,118 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}         
+\usepackage{listings}
+\usepackage{lstautogobble}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{polynom}
+\usepackage{capt-of}
+\usepackage{siunitx}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\mycomment}[1]{}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\var}[1]{\mathrm{Var}\left[ #1 \right]}
+\providecommand{\der}[1]{\mathrm{d} #1}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\z}[1]{{\mathcal{Z}}\{#1\}}
+\providecommand{\ztrans}{\overset{\mathcal{Z}}{ \rightleftharpoons}}
+
+\providecommand{\parder}[2]{\frac{\partial}{\partial #2} \brak{#1}}
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\numberwithin{equation}{section}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand\thesection{\arabic{section}}
+
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\lstset {
+	frame=single, 
+	breaklines=true,
+	columns=fullflexible,
+	autogobble=true
+} 
+
+\begin{document}
+                             
+\title{ Assignment-2 \\ \Large EE3900: Linear Systems and Signal Processing \\ \large Indian Institute of Technology Hyderabad}
+\author{Lokesh Badisa \\ \normalsize AI21BTECH11005 \\ \vspace*{20pt} \normalsize 1 Aug 2022}   
+\maketitle 
+ 
+\begin{abstract}
+ This document contains solution to Assignment-2 [ Question 2.4 from Discrete-Time Signal Processing by Alan V. Oppenheim and Ronald W. Schafer]
+ \end{abstract}
+ \section{Difference Equation}
+  \begin{enumerate}[label=\thesection.\arabic*]
+\item \textbf{[Question 2.4 from Discrete-Time Signal Processing by Alan V. Oppenheim] : }Consider the linear constant-coefficient difference equation:
+\begin{align}
+y\sbrak{n}-\frac{3}{4}y\sbrak{n-1}+\frac{1}{8}y\sbrak{n-2}&=2x\sbrak{n-1}
+\end{align}
+Determine $y\sbrak{n}$ for $n\ge 0 $ when $x\brak{n}=\delta \sbrak{n}$ and $y\brak{n}=0,n<0$.
+\end{enumerate}
+\solution By applying Z-transform,
+\begin{align}
+{\mathcal {Z}}\{y\sbrak{n}\}-\frac{3}{4}{\mathcal {Z}}\{y\sbrak{n-1}\}+\frac{1}{8}{\mathcal {Z}}\{y\sbrak{n-2}\}=2{\mathcal {Z}}\{x\sbrak{n-1}\}
+\end{align}
+As,
+\begin{align}
+\label{eq:z-trans-prop}
+	{\mathcal {Z}}\{x(n-k)\} &= z^{-k}X(z)
+\end{align}
+\begin{align}
+Y(z)-\frac{3}{4}z^{-1}Y(z)+\frac{1}{8}z^{-2}Y(z)&=2z^{-1}X(z)
+\end{align}
+As,
+\begin{align}
+x\brak{n}&=\delta \sbrak{n} \\
+{\mathcal {Z}}\{x(n)\}&={\mathcal {Z}}\{\delta(n)\}=1\\
+Y(z)-\frac{3}{4}z^{-1}Y(z)+\frac{1}{8}z^{-2}Y(z)&=2z^{-1}\\
+Y(z)(1-\frac{3}{4}z^{-1}+\frac{1}{8}z^{-2})&=2z^{-1}
+\end{align}
+\begin{align}
+Y(z)&=\frac{2z^{-1}}{1-\frac{3}{4}z^{-1}+\frac{1}{8}z^{-2}}\\
+&=\frac{-8}{4z-1}+\frac{8}{2z-1}\\
+\label{eq:main}
+&=\frac{4z^{-1}}{1-\frac{1}{2}z^{-1}}-\frac{2z^{-1}}{1-\frac{1}{4}z^{-1}}
+\end{align}
+\textbf{Case-1:}When ROC is $\abs{z}>\frac{1}{2}$, the signal x(n) is causal. Both terms in \eqref{eq:main} are causal.
+As,
+\begin{align}
+\label{eq:anti}
+a^{n-1}u(n-1) \ztrans \frac{z^{-1}}{1-az^{-1}} \quad \abs{z} > \abs{a}\\
+y(n)=4\brak{\frac{1}{2}}^{n-1}u(n-1)-2\brak{\frac{1}{4}}^{n-1}u(n-1)\\
+y(n)=\brak{\frac{1}{2}}^{n-3}u(n-1)-\brak{\frac{1}{4}}^{n-\frac{3}{2}}u(n-1)
+\end{align}
+\textbf{Case-2:}When ROC is $\frac{1}{4}<\abs{z}<\frac{1}{2}$, ROC is a ring. The signal is two-sided. Thus the pole $p_1=\frac{1}{2}$ provides anti-causal part and $p_2=\frac{1}{4}$ provides causal part.
+\begin{align}
+-a^{n-1}u(-n) \ztrans \frac{z^{-1}}{1-az^{-1}} \quad \abs{z} < \abs{a}\\
+y(n)=-4\brak{\frac{1}{2}}^{n-1}u(-n)-2\brak{\frac{1}{4}}^{n-1}u(n-1)\\
+=\brak{\frac{1}{2}}^{n-3}u(-n)-\brak{\frac{1}{4}}^{n-\frac{3}{2}}u(n-1)
+\end{align}
+\textbf{Case-3:}When ROC is $\abs{z}<\frac{1}{4}$, the signal x(n) is anti-causal. Both terms in \eqref{eq:main} are anti-causal.\\
+Using \eqref{eq:anti},
+\begin{align}
+y(n)&=-4\brak{\frac{1}{2}}^{n-1}u(-n)+2\brak{\frac{1}{4}}^{n-1}u(-n)\\
+y(n)&=\brak{\frac{1}{2}}^{n-3}u(-n)+\brak{\frac{1}{4}}^{n-\frac{3}{2}}u(-n)
+\end{align}
+\end{document}

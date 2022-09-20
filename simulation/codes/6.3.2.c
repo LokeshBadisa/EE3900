@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include<stdlib.h>
+#include <complex.h>
 #include "header.h"
 
 #define pi 3.14159
