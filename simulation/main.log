@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.27)  19 SEP 2022 21:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.27)  22 SEP 2022 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -791,7 +791,7 @@ Underfull \hbox (badness 6927) in paragraph at lines 141--144
 \OT1/txr/bx/n/12 Solution: \OT1/txr/m/n/12 The key strokes as well as
  []
 
-<./figs/3.1.pdf, id=60, 462.52798pt x 346.89601pt>
+<./figs/3.1.pdf, id=50, 462.52798pt x 346.89601pt>
 File: ./figs/3.1.pdf Graphic file (type pdf)
 <use ./figs/3.1.pdf>
 Package pdftex.def Info: ./figs/3.1.pdf  used on input line 160.
@@ -800,7 +800,7 @@ Package pdftex.def Info: ./figs/3.1.pdf  used on input line 160.
 
 
 ]
-<./figs/xnyn.pdf, id=97, 462.52798pt x 346.89601pt>
+<./figs/xnyn.pdf, id=89, 462.52798pt x 346.89601pt>
 File: ./figs/xnyn.pdf Graphic file (type pdf)
 <use ./figs/xnyn.pdf>
 Package pdftex.def Info: ./figs/xnyn.pdf  used on input line 180.
@@ -899,12 +899,16 @@ LaTeX Warning: Command \j invalid in math mode on input line 315.
 LaTeX Warning: Command \j invalid in math mode on input line 315.
 
 
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+
+
 LaTeX Warning: Command \j invalid in math mode on input line 319.
 
 
 LaTeX Warning: Command \j invalid in math mode on input line 319.
 
-<./figs/dtft.pdf, id=217, 462.52798pt x 346.89601pt>
+<./figs/dtft.pdf, id=208, 462.52798pt x 346.89601pt>
 File: ./figs/dtft.pdf Graphic file (type pdf)
 <use ./figs/dtft.pdf>
 Package pdftex.def Info: ./figs/dtft.pdf  used on input line 328.
@@ -951,7 +955,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: Reference `fig:hn' on page 4 undefined on input line 405.
 
-<./figs/hn.pdf, id=253, 462.52798pt x 346.89601pt>
+<./figs/hn.pdf, id=243, 462.52798pt x 346.89601pt>
 File: ./figs/hn.pdf Graphic file (type pdf)
 <use ./figs/hn.pdf>
 Package pdftex.def Info: ./figs/hn.pdf  used on input line 408.
@@ -975,13 +979,13 @@ Overfull \hbox (9.44482pt too wide) detected at line 461
 
 LaTeX Warning: Reference `fig:hn' on page 5 undefined on input line 480.
 
-<./figs/hndef.pdf, id=334, 462.52798pt x 346.89601pt>
+<./figs/hndef.pdf, id=324, 462.52798pt x 346.89601pt>
 File: ./figs/hndef.pdf Graphic file (type pdf)
 <use ./figs/hndef.pdf>
 Package pdftex.def Info: ./figs/hndef.pdf  used on input line 493.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
 [5 <./figs/hn.pdf>]
-<./figs/ynconv.pdf, id=408, 462.52798pt x 346.89601pt>
+<./figs/ynconv.pdf, id=398, 462.52798pt x 346.89601pt>
 File: ./figs/ynconv.pdf Graphic file (type pdf)
 <use ./figs/ynconv.pdf>
 Package pdftex.def Info: ./figs/ynconv.pdf  used on input line 518.
@@ -997,7 +1001,7 @@ Overfull \hbox (21.62378pt too wide) detected at line 532
 
 LaTeX Warning: Command \j invalid in math mode on input line 551.
 
-<./figs/xkhk.pdf, id=411, 462.52798pt x 346.89601pt>
+<./figs/xkhk.pdf, id=401, 462.52798pt x 346.89601pt>
 File: ./figs/xkhk.pdf Graphic file (type pdf)
 <use ./figs/xkhk.pdf>
 Package pdftex.def Info: ./figs/xkhk.pdf  used on input line 557.
@@ -1007,7 +1011,7 @@ Package pdftex.def Info: ./figs/xkhk.pdf  used on input line 557.
 pdfTeX warning: /usr/bin/pdflatex (file ./figs/ynconv.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
 >]
-<./figs/yk.pdf, id=511, 462.52798pt x 346.89601pt>
+<./figs/yk.pdf, id=501, 462.52798pt x 346.89601pt>
 File: ./figs/yk.pdf Graphic file (type pdf)
 <use ./figs/yk.pdf>
 Package pdftex.def Info: ./figs/yk.pdf  used on input line 571.
@@ -1026,7 +1030,7 @@ Package epstopdf Info: Source file: <./figs/6.4.1.eps>
 -to.pdf ./figs/6.4.1.eps>
 (epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
-<./figs/6.4.1-eps-converted-to.pdf, id=514, 463.7325pt x 347.2975pt>
+<./figs/6.4.1-eps-converted-to.pdf, id=504, 463.7325pt x 347.2975pt>
 File: ./figs/6.4.1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figs/6.4.1-eps-converted-to.pdf>
 Package pdftex.def Info: ./figs/6.4.1-eps-converted-to.pdf  used on input line 
@@ -1046,76 +1050,99 @@ Underfull \hbox (badness 1354) in paragraph at lines 600--603
  []
 
 [7 <./figs/xkhk.pdf> <./figs/yk.pdf> <./figs/6.4.1-eps-converted-to.pdf>]
-Overfull \hbox (24.5878pt too wide) detected at line 750
+Overfull \hbox (24.5878pt too wide) detected at line 746
 []
  []
 
 
-Overfull \hbox (16.78471pt too wide) detected at line 799
+Overfull \hbox (16.78471pt too wide) detected at line 795
 []
  []
 
 [8]
-Overfull \hbox (1.16736pt too wide) detected at line 803
+Overfull \hbox (1.16736pt too wide) detected at line 799
 []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 820--825
+Underfull \hbox (badness 5403) in paragraph at lines 816--821
 \OT1/txr/m/n/12 where $[]$ is a unit ma-trix and $[]$
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 820--825
+Underfull \hbox (badness 6220) in paragraph at lines 816--821
 \OT1/txr/m/n/12 is a di-ag-o-nal ma-trix with el-e-ments as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 820--825
+Underfull \hbox (badness 10000) in paragraph at lines 816--821
 
  []
 
 [9]
-Overfull \hbox (74.8755pt too wide) detected at line 935
+Overfull \hbox (74.8755pt too wide) detected at line 931
 []
  []
 
 
-Overfull \hbox (17.61461pt too wide) detected at line 1188
+Overfull \hbox (17.61461pt too wide) detected at line 1184
 []
  []
 
 [10]
-Overfull \hbox (32.04657pt too wide) detected at line 1197
+Overfull \hbox (32.04657pt too wide) detected at line 1193
 []
  []
 
 [11]
+Package epstopdf Info: Source file: <./figs/TimeComparison.eps>
+(epstopdf)                    date: 2022-09-22 22:20:00
+(epstopdf)                    size: 25388 bytes
+(epstopdf)             Output file: <./figs/TimeComparison-eps-converted-to.pdf
+>
+(epstopdf)             Command: <repstopdf --outfile=./figs/TimeComparison-eps-
+converted-to.pdf ./figs/TimeComparison.eps>
+(epstopdf)             \includegraphics on input line 1311.
+runsystem(repstopdf --outfile=./figs/TimeComparison-eps-converted-to.pdf ./figs
+/TimeComparison.eps)...executed safely (allowed).
 
-LaTeX Warning: Command \j invalid in math mode on input line 1335.
+Package epstopdf Info: Result file: <./figs/TimeComparison-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2022-09-22 22:21:15
+(epstopdf)                    size: 16697 bytes.
+<./figs/TimeComparison-eps-converted-to.pdf, id=745, 463.7325pt x 347.2975pt>
+File: ./figs/TimeComparison-eps-converted-to.pdf Graphic file (type pdf)
+<use ./figs/TimeComparison-eps-converted-to.pdf>
+Package pdftex.def Info: ./figs/TimeComparison-eps-converted-to.pdf  used on in
+put line 1311.
+(pdftex.def)             Requested size: 252.0pt x 188.7302pt.
 
-<./figs/7.2.1.png, id=757, 462.528pt x 346.896pt>
+
+LaTeX Warning: Command \j invalid in math mode on input line 1337.
+
+
+Underfull \vbox (badness 1354) has occurred while \output is active []
+
+ [12 <./figs/TimeComparison-eps-converted-to.pdf>]
+<./figs/7.2.1.png, id=815, 462.528pt x 346.896pt>
 File: ./figs/7.2.1.png Graphic file (type png)
 <use ./figs/7.2.1.png>
-Package pdftex.def Info: ./figs/7.2.1.png  used on input line 1368.
+Package pdftex.def Info: ./figs/7.2.1.png  used on input line 1370.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-<./figs/7.2.2.png, id=759, 462.528pt x 346.896pt>
+<./figs/7.2.2.png, id=817, 462.528pt x 346.896pt>
 File: ./figs/7.2.2.png Graphic file (type png)
 <use ./figs/7.2.2.png>
-Package pdftex.def Info: ./figs/7.2.2.png  used on input line 1375.
+Package pdftex.def Info: ./figs/7.2.2.png  used on input line 1377.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
 
-LaTeX Warning: Command \j invalid in math mode on input line 1376.
 
-<./figs/7.2.3.png, id=760, 462.528pt x 346.896pt>
+LaTeX Warning: Command \j invalid in math mode on input line 1378.
+
+<./figs/7.2.3.png, id=818, 462.528pt x 346.896pt>
 File: ./figs/7.2.3.png Graphic file (type png)
 <use ./figs/7.2.3.png>
-Package pdftex.def Info: ./figs/7.2.3.png  used on input line 1382.
+Package pdftex.def Info: ./figs/7.2.3.png  used on input line 1384.
 (pdftex.def)             Requested size: 252.0pt x 189.00427pt.
-[12]
-
-LaTeX Warning: Text page 13 contains only floats.
-
 [13 <./figs/7.2.1.png> <./figs/7.2.2.png> <./figs/7.2.3.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
@@ -1124,16 +1151,16 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2D550BA8C7F113187078AE68EF76BB1E;1092.
+(rerunfilecheck)             Checksum: 1054B0346F3F8E3C6409F212C6ABFD32;836.
  ) 
 Here is how much of TeX's memory you used:
- 18451 strings out of 478287
- 335424 string characters out of 5849289
- 714195 words of memory out of 5000000
- 36074 multiletter control sequences out of 15000+600000
+ 18456 strings out of 478287
+ 335674 string characters out of 5849289
+ 715180 words of memory out of 5000000
+ 36079 multiletter control sequences out of 15000+600000
  547147 words of font info for 190 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,18n,79p,616b,1649s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,18n,79p,616b,2346s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxb.pfb></usr/share/texlive/texmf-dist/fonts/type
@@ -1145,10 +1172,10 @@ texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (13 pages, 295440 bytes).
+Output written on main.pdf (13 pages, 307562 bytes).
 PDF statistics:
- 919 PDF objects out of 1000 (max. 8388607)
- 604 compressed objects within 7 object streams
- 299 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 955 PDF objects out of 1000 (max. 8388607)
+ 600 compressed objects within 6 object streams
+ 298 named destinations out of 1000 (max. 500000)
+ 130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

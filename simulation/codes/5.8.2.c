@@ -2,6 +2,7 @@
 #include <math.h>
 #include "header.h"
 #include <stdlib.h>
+#include <time.h>
 
 int main(){
 int n = 14;
@@ -16,7 +17,8 @@ double *y=(double *)malloc((nx+nh-1)*sizeof(double));
 for(int i=0;i<nx+nh-1;i++){
     y[i]=0;
 }
-
+clock_t t;
+   t = clock();
 
 for (int k=0;k<nx+nh-1;k++){
 	for(int j=0;j<nx;j++){
@@ -25,7 +27,13 @@ for (int k=0;k<nx+nh-1;k++){
         }
     }
 }
-
+t = clock() - t;
+FILE *fp = fopen("convolutiontime.dat", "w");
+	if (!fp) {
+		printf("Couldn't open file\n");
+	}
+	fprintf(fp, "%f\n", ((double)t)/CLOCKS_PER_SEC);
+	fclose(fp);
 for(int i=0;i<nx+nh-1;i++){
 printf("%lf\n",y[i]);
 }

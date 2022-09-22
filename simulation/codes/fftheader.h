@@ -77,9 +77,11 @@ double complex **a = createComplMat(N,N);
     return a;
 }
 
+
 double complex w(int N){
     return cexp(-I * 2 * PI / N) ;
 }
+
 
 double complex **D(int N){
     printf("D entered");

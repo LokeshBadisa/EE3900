@@ -543,7 +543,7 @@ y(n) &=  x(n)*h(n)\\
 \end{enumerate}
 
 %
-\section{DFT and FFT}
+\section{DFT}
 \begin{enumerate}[label=\thesection.\arabic*]
 \item
 Compute
@@ -605,7 +605,6 @@ wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing
 \end{lstlisting}
 	\end{enumerate}
 	\section{FFT}	
-	\subsection{Definitions}
 \begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{section}
     \item The DFT of $x(n)$ is given by
@@ -633,9 +632,6 @@ W_{N} = e^{-j2\pi/N}
 	\begin{align}
 		\vec{D}_4 = diag\myvec{W_{8}^{0} & W_{8}^{1} & W_{8}^{2} & W_{8}^{3}}
 	\end{align}
- \end{enumerate}
- \subsection{Problems}
-\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{section}
 \item Show that 
 \begin{equation}
@@ -1306,10 +1302,16 @@ And $\vec{P_8}$ is a permutation matrix.
 \end{bmatrix}
 \end{align}
 \item Write a C program to compute the 8-point FFT.
-\begin{lstlisting} 
+\solution \begin{lstlisting} 
 wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/7.9.c
 gcc 7.9.c -lm
 \end{lstlisting}
+\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=\columnwidth]{./figs/TimeComparison.eps}
+		\caption{Time Comparison}
+		\label{fig-7.13}	
+	\end{figure}
  \end{enumerate}
 	\section{Exercises}
 	Answer the following questions by looking at the python code in Problem \ref{prob:output}
@@ -1336,7 +1338,7 @@ gcc 7.9.c -lm
 	
 	Download the following Python code that does the above
 	\begin{lstlisting}
-		wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/7.1.py
+		wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/8.1.py
 	\end{lstlisting}
 	
 	\item Repeat all the exercises in the previous sections for the above $a$ and $b$
@@ -1360,7 +1362,7 @@ gcc 7.9.c -lm
 	
 	Download the following Python code
 	\begin{lstlisting}
-		wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/7.2.py
+		wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/codes/8.2.py
 	\end{lstlisting}
 	
 	\begin{figure}[!ht]
