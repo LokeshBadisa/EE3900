@@ -32,9 +32,9 @@ void createDat(char *file, int count,double *y) {
 	return;
 }
 
-//Unit Sample Sequence
-double delta(int n){
-	if(n==0){
+//Unit Step Sequence
+double u(int n){
+	if(n>=0){
 	  return 1;
 }
 	else {
@@ -43,11 +43,15 @@ double delta(int n){
 }
 
 //Calculating h(n) through given definition
-double hnthroughdef(int n){
-	if(n<0) {
-		return 0;
-	}
-	else {
-		return delta(n)+delta(n-2)-(0.5*hnthroughdef(n-1));
+double h(int n){
+	return pow(-0.5,n) * u(n) + pow(-0.5,n-2) * u(n-2);
+}
+
+void convolve(double x[], int n) { 
+	double a[n];
+	for (int i = 0; i < n; i++){
+		 for (int j = 0; j <= i; j++){ 
+			a[i] += h(j)*x[i - j];
+		 }
 	}
 }
