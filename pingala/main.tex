@@ -57,11 +57,9 @@
 \begin{document}
                              
 \title{ Digital Signal Processing \\ \Large EE3900: Linear Systems and Signal Processing \\ \large Indian Institute of Technology Hyderabad \\ \vspace*{12pt} \textbf{Pingala}}
-\author{Lokesh Badisa \\ \normalsize AI21BTECH11005 \\ \vspace*{20pt} \normalsize 7 Oct 2022}   
+\author{Lokesh Badisa \\ \normalsize AI21BTECH11005 \\ \vspace*{20pt} \normalsize 7 Oct 2022  }
  \maketitle 
- \begin{abstract}
- This document contains solution to Pingala Series Assignment given regarding EE3900 course]
- \end{abstract}
+ \tableofcontents 
 \section{JEE 2019}
 \noindent Let $\alpha$ and $\beta$ ($\alpha > \beta$) be the roots of the
 equation $z^2 - z - 1 = 0$. Define,
@@ -78,27 +76,35 @@ Verify the following using a python code.
 \begin{align}
 	\sum_{k=1}^{n}a_k = a_{n+2}-1, \quad n \ge 1
 \end{align}
+\solution
+\begin{lstlisting}
+https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/pingala/codes/1.1.py
+\end{lstlisting}
  \item 
 \begin{align}
 	\sum_{k=1}^{\infty}\frac{a_k}{10^k} =\frac{10}{89}
 \end{align}
+\solution
+\begin{lstlisting}
+https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/pingala/codes/1.2.py
+\end{lstlisting}
  \item 
 \begin{align}
 	b_n =\alpha^n + \beta^n, \quad n \ge 1
 \end{align}
+\solution
+\begin{lstlisting}
+https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/pingala/codes/1.3.py
+\end{lstlisting}
  \item 
 \begin{align}
 	\sum_{k=1}^{\infty}\frac{b_k}{10^k} =\frac{8}{89}
 \end{align}
+\solution
+\begin{lstlisting}
+https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/pingala/codes/1.4.py
+\end{lstlisting}
 \end{enumerate}
-Download the Python code using
-\begin{lstlisting}
-$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignmnets/main/pingala/codes/1.py
-\end{lstlisting}
-and run it using
-\begin{lstlisting}
-$ python3 1.py
-\end{lstlisting}
 \section{Pingala Series}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 \item The {\em one sided} $Z$-transform of $x(n)$ is defined as 
@@ -114,13 +120,8 @@ $ python3 1.py
 Generate a stem plot for $x(n)$.
 
 \solution
-Download the Python code using
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignmnets/main/pingala/codes/2_1.py
-\end{lstlisting}
-and run it using
-\begin{lstlisting}
-$ python3 2_1.py
+https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/pingala/codes/2.1.py
 \end{lstlisting}
 
 \begin{figure}[!htp]
@@ -128,8 +129,6 @@ $ python3 2_1.py
    \caption{Plot of $x(n)$}
  \label{fig:xn}
 \end{figure}
-
-\newpage
 \item Find $X^{+}(z)$.
 
 \solution Taking the one-sided $Z$-transform on both sides of \eqref{eq:10-pingala},
@@ -162,13 +161,8 @@ where $k := n + 1$. Thus,
 \end{align}
 
 \solution
-Download the Python code using
 \begin{lstlisting}
-$ wget https://raw.githubusercontent.com/goats-9/ee3900-assignmnets/main/pingala/codes/2_2.py
-\end{lstlisting}
-and run it using
-\begin{lstlisting}
-$ python3 2_2.py
+https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/pingala/codes/2.2.py
 \end{lstlisting}
 
 \begin{figure}[!htbp]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.27)  1 OCT 2022 09:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.27)  1 OCT 2022 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -659,89 +659,88 @@ LaTeX Info: Redefining \nameref on input line 57.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
+ (./main.toc)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
 LaTeX Font Info:    Trying to load font information for U+txsya on input line 6
-6.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyb on input line 6
-6.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txmia on input line 6
-6.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Trying to load font information for U+txsyc on input line 6
-6.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 9
-6.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 8
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-Overfull \hbox (25.86975pt too wide) detected at line 113
+Overfull \hbox (25.86975pt too wide) detected at line 119
 []
  []
 
-Package epstopdf Info: Source file: <figs/2.1.eps>
-(epstopdf)                    date: 2022-10-01 09:40:32
-(epstopdf)                    size: 18450 bytes
-(epstopdf)             Output file: <figs/2.1-eps-converted-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=figs/2.1-eps-converted-to.
-pdf figs/2.1.eps>
-(epstopdf)             \includegraphics on input line 127.
-runsystem(repstopdf --outfile=figs/2.1-eps-converted-to.pdf figs/2.1.eps)...exe
-cuted safely (allowed).
-
-Package epstopdf Info: Result file: <figs/2.1-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-10-01 09:42:21
-(epstopdf)                    size: 11738 bytes.
-<figs/2.1-eps-converted-to.pdf, id=16, 463.7325pt x 347.2975pt>
-File: figs/2.1-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/2.1-eps-converted-to.pdf>
-Package pdftex.def Info: figs/2.1-eps-converted-to.pdf  used on input line 127.
-
-(pdftex.def)             Requested size: 252.0pt x 188.7302pt.
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Overfull \hbox (14.25941pt too wide) detected at line 143
+Package epstopdf Info: Source file: <figs/2.1.eps>
+(epstopdf)                    date: 2022-10-01 09:40:32
+(epstopdf)                    size: 18450 bytes
+(epstopdf)             Output file: <figs/2.1-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-10-01 09:42:21
+(epstopdf)                    size: 11738 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/2.1-eps-converted-to.
+pdf figs/2.1.eps>
+(epstopdf)             \includegraphics on input line 128.
+Package epstopdf Info: Output file is already uptodate.
+<figs/2.1-eps-converted-to.pdf, id=57, 463.7325pt x 347.2975pt>
+File: figs/2.1-eps-converted-to.pdf Graphic file (type pdf)
+<use figs/2.1-eps-converted-to.pdf>
+Package pdftex.def Info: figs/2.1-eps-converted-to.pdf  used on input line 128.
+
+(pdftex.def)             Requested size: 252.0pt x 188.7302pt.
+
+Overfull \hbox (14.25941pt too wide) detected at line 142
 []
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package epstopdf Info: Source file: <figs/2.2.eps>
 (epstopdf)                    date: 2022-10-01 09:41:25
 (epstopdf)                    size: 16724 bytes
 (epstopdf)             Output file: <figs/2.2-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-10-01 09:42:22
+(epstopdf)                    size: 11246 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/2.2-eps-converted-to.
 pdf figs/2.2.eps>
-(epstopdf)             \includegraphics on input line 175.
-runsystem(repstopdf --outfile=figs/2.2-eps-converted-to.pdf figs/2.2.eps)...exe
-cuted safely (allowed).
-
-Package epstopdf Info: Result file: <figs/2.2-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-10-01 09:42:22
-(epstopdf)                    size: 11246 bytes.
-<figs/2.2-eps-converted-to.pdf, id=57, 463.7325pt x 347.2975pt>
+(epstopdf)             \includegraphics on input line 169.
+Package epstopdf Info: Output file is already uptodate.
+<figs/2.2-eps-converted-to.pdf, id=60, 463.7325pt x 347.2975pt>
 File: figs/2.2-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/2.2-eps-converted-to.pdf>
-Package pdftex.def Info: figs/2.2-eps-converted-to.pdf  used on input line 175.
+Package pdftex.def Info: figs/2.2-eps-converted-to.pdf  used on input line 169.
 
 (pdftex.def)             Requested size: 252.0pt x 188.7302pt.
-
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
  [2 <./figs/2.1-eps-converted-to.pdf> <./figs/2.2-eps-converted-to.pdf>] [3] [4
 
 ]
@@ -753,13 +752,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6EF0FDA02AE42AB5EB9699AF63378C50;377.
  ) 
 Here is how much of TeX's memory you used:
- 14379 strings out of 478287
- 222587 string characters out of 5849289
- 588439 words of memory out of 5000000
- 32239 multiletter control sequences out of 15000+600000
- 547141 words of font info for 190 fonts, out of 8000000 for 9000
+ 14381 strings out of 478287
+ 222611 string characters out of 5849289
+ 641439 words of memory out of 5000000
+ 32241 multiletter control sequences out of 15000+600000
+ 544455 words of font info for 186 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,10n,63p,220b,1286s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,10n,63p,220b,1418s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/typ
@@ -769,12 +768,12 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (4 pages, 102881 bytes).
+w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on main.pdf (4 pages, 96209 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 103 named destinations out of 1000 (max. 500000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
+ 104 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
