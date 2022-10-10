@@ -143,6 +143,11 @@ q_1=\frac{4}{3} \cdot 1\\
 	&=\frac{1}{s}
 	\end{align}
 	ROC is $ Re(s)>0$ since $e^{-st}<\infty$ for $t \to \infty$
+	The following command plots the ROC of above Laplace Transform.
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/2.4.py
+python3 2.4.py	
+\end{lstlisting}
 	\begin{figure}[!ht]
 			\centering
 			\includegraphics[width=\columnwidth]{figs/2.4}
@@ -166,6 +171,11 @@ q_1=\frac{4}{3} \cdot 1\\
 		\begin{align}
 		s+a>0 \Rightarrow s>-a
 		\end{align}
+		The following command plots the ROC of above Laplace Transform.
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/2.5.py
+python3 2.5.py	
+\end{lstlisting}
 		\begin{figure}[!ht]
 			\centering
 			\includegraphics[width=\columnwidth]{figs/2.5}
@@ -222,6 +232,11 @@ Using the above equations,
 \begin{align}
 V_{C_0}(t)=\frac{4}{3}\brak{ 1-e^{\frac{-3}{2} t}}u(t)
 	\end{align}
+	The following command plots the above equation.
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/2.7.py
+python3 2.7.py	
+\end{lstlisting}
 	\begin{figure}[!ht]
 			\centering
 			\includegraphics[width=\columnwidth]{figs/2.7}
@@ -229,7 +244,12 @@ V_{C_0}(t)=\frac{4}{3}\brak{ 1-e^{\frac{-3}{2} t}}u(t)
 			%\label{fig:lap-ckt}
 \end{figure}
 	\item Verify your result using ngspice.
-\solution \begin{figure}[!ht]
+	\solution The following command plots the ROC of above Laplace Transform.
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/2.8.cir
+ngspice 2.8.cir	
+\end{lstlisting}
+\begin{figure}[!ht]
 			\centering
 			\includegraphics[width=\columnwidth]{figs/2.8}
 			\caption{}
@@ -251,6 +271,10 @@ V_{C_0}(t)=\frac{4}{3}\brak{ 1-e^{\frac{-3}{2} t}}u(t)
 Use latex-tikz.
 		\label{prob:init}
 		\solution 
+		The following command plots the ROC of above Laplace Transform.
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/Tikz Circuits/3.2.tex
+\end{lstlisting}
 	\begin{figure}[!ht]
  \centering
 \input{Tikz Circuits/3.2.tex}
@@ -280,6 +304,11 @@ Substituting values gives
     v_{C_0}(t) = \frac{2}{3}\brak{1 +e^{-\brak{1.5 \times 10^6}t}}u(t)
     \label{eq:v2-t}
 \end{align}
+The following command plots the above equation.
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/3.4.py
+python3 3.4.py	
+\end{lstlisting}
 \begin{figure}[!ht]
 			\centering
 			\includegraphics[width=\columnwidth]{figs/3.4}
@@ -287,7 +316,12 @@ Substituting values gives
 			%\label{fig:lap-ckt}
 \end{figure}
 	\item Verify your result using ngspice.
-	\solution \begin{figure}[!ht]
+	\solution The following command plots Fig.3.3
+	\begin{lstlisting}
+wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/3.5.cir
+ngspice 3.5.cir	
+\end{lstlisting}
+	 \begin{figure}[!ht]
 			\centering
 			\includegraphics[width=\columnwidth]{figs/3.5}
 			\caption{}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.9.30)  1 OCT 2022 05:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.9.30)  8 OCT 2022 13:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -603,20 +603,11 @@ Overfull \hbox (25.86975pt too wide) detected at line 119
 
 
 ]
-Package epstopdf Info: Source file: <figs/2.1.eps>
-(epstopdf)                    date: 2022-10-01 04:20:25
-(epstopdf)                    size: 18450 bytes
-(epstopdf)             Output file: <figs/2.1-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-10-01 04:20:25
-(epstopdf)                    size: 11738 bytes
-(epstopdf)             Command: <repstopdf --outfile=figs/2.1-eps-converted-to.pdf figs/2.1.eps>
-(epstopdf)             \includegraphics on input line 128.
-Package epstopdf Info: Output file is already uptodate.
-<figs/2.1-eps-converted-to.pdf, id=57, 463.7325pt x 347.2975pt>
-File: figs/2.1-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/2.1-eps-converted-to.pdf>
-Package pdftex.def Info: figs/2.1-eps-converted-to.pdf  used on input line 128.
-(pdftex.def)             Requested size: 252.0pt x 188.7302pt.
+<figs/2.1.pdf, id=57, 462.52798pt x 346.89601pt>
+File: figs/2.1.pdf Graphic file (type pdf)
+<use figs/2.1.pdf>
+Package pdftex.def Info: figs/2.1.pdf  used on input line 128.
+(pdftex.def)             Requested size: 252.0pt x 189.00429pt.
 
 Overfull \hbox (14.25941pt too wide) detected at line 142
 []
@@ -625,39 +616,33 @@ Overfull \hbox (14.25941pt too wide) detected at line 142
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package epstopdf Info: Source file: <figs/2.2.eps>
-(epstopdf)                    date: 2022-10-01 04:20:25
-(epstopdf)                    size: 16724 bytes
-(epstopdf)             Output file: <figs/2.2-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-10-01 04:20:25
-(epstopdf)                    size: 11246 bytes
-(epstopdf)             Command: <repstopdf --outfile=figs/2.2-eps-converted-to.pdf figs/2.2.eps>
-(epstopdf)             \includegraphics on input line 169.
-Package epstopdf Info: Output file is already uptodate.
-<figs/2.2-eps-converted-to.pdf, id=60, 463.7325pt x 347.2975pt>
-File: figs/2.2-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/2.2-eps-converted-to.pdf>
-Package pdftex.def Info: figs/2.2-eps-converted-to.pdf  used on input line 169.
-(pdftex.def)             Requested size: 252.0pt x 188.7302pt.
- [2 </root/EE3900-Linear-Systems-and-Signal-Processing/pingala/figs/2.1-eps-converted-to.pdf> </root/EE3900-Linear-Systems-and-Signal-Processing/pingala/figs/2.2-eps-converted-to.pdf>] [3] [4
+<figs/2.2.pdf, id=60, 462.52798pt x 346.89601pt>
+File: figs/2.2.pdf Graphic file (type pdf)
+<use figs/2.2.pdf>
+Package pdftex.def Info: figs/2.2.pdf  used on input line 169.
+(pdftex.def)             Requested size: 252.0pt x 189.00429pt.
+ [2 </root/EE3900-Linear-Systems-and-Signal-Processing/pingala/figs/2.1.pdf> </root/EE3900-Linear-Systems-and-Signal-Processing/pingala/figs/2.2.pdf
+
+pdfTeX warning: pdflatex (file /root/EE3900-Linear-Systems-and-Signal-Processing/pingala/figs/2.2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [3] [4
 
 ] (/root/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 84E0C472418CCA051F909B1CF9289940;151.
  ) 
 Here is how much of TeX's memory you used:
- 11147 strings out of 479304
- 167458 string characters out of 5869779
+ 11108 strings out of 479304
+ 166940 string characters out of 5869779
  565853 words of memory out of 5000000
- 28007 multiletter control sequences out of 15000+600000
+ 27981 multiletter control sequences out of 15000+600000
  478626 words of font info for 185 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,10n,74p,278b,1413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /root/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.pdf (4 pages, 88339 bytes).
+Output written on /root/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.pdf (4 pages, 82716 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
+ 264 PDF objects out of 1000 (max. 8388607)
+ 217 compressed objects within 3 object streams
  104 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 

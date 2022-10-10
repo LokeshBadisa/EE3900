@@ -1,6 +1,7 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
+import subprocess
+import shlex
 
 x = [0,4,4,0,0]
 y = [4,4,-4,-4,4]
@@ -17,6 +18,7 @@ ax.set_ylabel('Im(s)',loc='top')
 plt.setp(ax.get_yticklabels(), visible=False)
 plt.xticks([0])
 plt.title('ROC')
-plt.savefig('Circuits/figs/2.4.eps')
-plt.savefig('Circuits/figs/2.4.pdf')
-plt.show()
+plt.savefig('../figs/2.4.eps')
+plt.savefig('../figs/2.4.pdf')
+subprocess.run(shlex.split("termux-open ../figs/2.4.pdf"))
+#plt.show()
