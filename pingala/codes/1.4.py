@@ -13,6 +13,11 @@ tb = b*(1/t[:99])
 eps = 1e-6
 ans = 8/89
 sb = np.cumsum(tb)
-plt.stem()
+k1=np.linspace(1,99,99)
+plt.stem(k1,sb,label='Simulation')
+plt.axhline(y=8/89,color='r',label='Theoretical')
+plt.savefig('pingala/figs/1.4.eps')
+plt.savefig('pingala/figs/1.4.pdf')
+#plt.show()
 if (abs(sb[-1] - ans) < eps): print("1.4 correct")
 else: print("1.4 incorrect")
