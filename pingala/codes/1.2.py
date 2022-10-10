@@ -12,6 +12,7 @@ ans = 10/89
 sa = np.cumsum(ta)
 plt.stem(k,sa,label='Simulation')
 plt.axhline(y=10/89,color='r',label='Theoretical')
+plt.legend()
 plt.savefig('pingala/figs/1.2.eps')
 plt.savefig('pingala/figs/1.2.pdf')
 #plt.show()
