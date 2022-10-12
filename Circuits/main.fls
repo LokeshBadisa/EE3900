@@ -1,21 +1,21 @@
-PWD /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits
+PWD /home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/Circuits
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.tex
-OUTPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.log
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
-INPUT /usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
+INPUT /home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.tex
+OUTPUT main.log
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+INPUT /usr/share/texlive/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
@@ -445,6 +445,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
@@ -469,6 +473,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/url/url.sty
@@ -867,10 +875,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.aux
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.aux
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.aux
-OUTPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.aux
+INPUT ./main.aux
+INPUT main.aux
+INPUT main.aux
+OUTPUT main.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
@@ -979,24 +987,24 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.st
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-OUTPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-OUTPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
+INPUT ./main.out
+INPUT main.out
+INPUT ./main.out
+INPUT main.out
+INPUT ./main.out
+INPUT main.out
+INPUT ./main.out
+INPUT main.out
+OUTPUT main.pdf
+INPUT ./main.out
+INPUT ./main.out
+OUTPUT main.out
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txsc.tfm
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.toc
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.toc
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.toc
-OUTPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.toc
+INPUT ./main.toc
+INPUT main.toc
+INPUT main.toc
+OUTPUT main.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
@@ -1046,24 +1054,24 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/ckt.jpg
+INPUT ./figs/ckt.jpg
+INPUT ./figs/ckt.jpg
+INPUT figs/ckt.jpg
+INPUT ./figs/ckt.jpg
+INPUT ./figs/ckt.jpg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/tcxr.tfm
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.3.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.3.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.3.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/2.3.tex
+INPUT ./Tikz Circuits/2.2.tex
+INPUT Tikz Circuits/2.2.tex
+INPUT ./Tikz Circuits/2.2.tex
+INPUT Tikz Circuits/2.2.tex
+INPUT ./Tikz Circuits/2.3.tex
+INPUT Tikz Circuits/2.3.tex
+INPUT ./Tikz Circuits/2.3.tex
+INPUT Tikz Circuits/2.3.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
@@ -1099,23 +1107,23 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/tcxr.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtcxr.tfm
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.5.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.5.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.5.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.5.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/lap-ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/lap-ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/lap-ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/lap-ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/lap-ckt.jpg
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.7.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.7.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.7.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.7.pdf
+INPUT ./figs/2.4.pdf
+INPUT figs/2.4.pdf
+INPUT ./figs/2.4.pdf
+INPUT ./figs/2.4.pdf
+INPUT ./figs/2.5.pdf
+INPUT figs/2.5.pdf
+INPUT ./figs/2.5.pdf
+INPUT ./figs/2.5.pdf
+INPUT ./figs/lap-ckt.jpg
+INPUT ./figs/lap-ckt.jpg
+INPUT figs/lap-ckt.jpg
+INPUT ./figs/lap-ckt.jpg
+INPUT ./figs/lap-ckt.jpg
+INPUT ./figs/2.7.pdf
+INPUT figs/2.7.pdf
+INPUT ./figs/2.7.pdf
+INPUT ./figs/2.7.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txmi.tfm
@@ -1141,16 +1149,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbsy.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/txbex.tfm
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/2.8-eps-converted-to.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
@@ -1163,27 +1161,32 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/3.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/3.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/3.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/Tikz Circuits/3.2.tex
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.4.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5.eps
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/figs/3.5-eps-converted-to.pdf
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.aux
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
-INPUT /root/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.out
+INPUT ./figs/2.8.png
+INPUT ./figs/2.8.png
+INPUT figs/2.8.png
+INPUT ./figs/2.8.png
+INPUT ./figs/2.8.png
+INPUT ./Tikz Circuits/3.2.tex
+INPUT Tikz Circuits/3.2.tex
+INPUT ./Tikz Circuits/3.2.tex
+INPUT Tikz Circuits/3.2.tex
+INPUT ./figs/3.4.pdf
+INPUT figs/3.4.pdf
+INPUT ./figs/3.4.pdf
+INPUT ./figs/3.4.pdf
+INPUT ./figs/3.5.eps
+INPUT figs/3.5.eps
+INPUT ./figs/3.5.eps
+INPUT ./figs/3.5.eps
+INPUT ./figs/3.5-eps-converted-to.pdf
+INPUT ./figs/3.5-eps-converted-to.pdf
+INPUT ./figs/3.5.eps
+INPUT ./figs/3.5-eps-converted-to.pdf
+INPUT ./figs/3.5-eps-converted-to.pdf
+INPUT ./figs/3.5-eps-converted-to.pdf
+INPUT main.aux
+INPUT ./main.out
+INPUT ./main.out
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb

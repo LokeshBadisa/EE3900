@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+!pip show numpy
+
 n = 100
 alpha = (1 + np.sqrt(5))/2
 beta = (1 - np.sqrt(5))/2
