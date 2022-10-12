@@ -1161,11 +1161,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmri.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/rtxr.tfm
-INPUT ./figs/2.8.png
-INPUT ./figs/2.8.png
-INPUT figs/2.8.png
-INPUT ./figs/2.8.png
-INPUT ./figs/2.8.png
+INPUT ./figs/2.8.1.pdf
+INPUT figs/2.8.1.pdf
+INPUT ./figs/2.8.1.pdf
+INPUT ./figs/2.8.1.pdf
 INPUT ./Tikz Circuits/3.2.tex
 INPUT Tikz Circuits/3.2.tex
 INPUT ./Tikz Circuits/3.2.tex
@@ -1174,16 +1173,10 @@ INPUT ./figs/3.4.pdf
 INPUT figs/3.4.pdf
 INPUT ./figs/3.4.pdf
 INPUT ./figs/3.4.pdf
-INPUT ./figs/3.5.eps
-INPUT figs/3.5.eps
-INPUT ./figs/3.5.eps
-INPUT ./figs/3.5.eps
-INPUT ./figs/3.5-eps-converted-to.pdf
-INPUT ./figs/3.5-eps-converted-to.pdf
-INPUT ./figs/3.5.eps
-INPUT ./figs/3.5-eps-converted-to.pdf
-INPUT ./figs/3.5-eps-converted-to.pdf
-INPUT ./figs/3.5-eps-converted-to.pdf
+INPUT ./figs/3.5.1.pdf
+INPUT figs/3.5.1.pdf
+INPUT ./figs/3.5.1.pdf
+INPUT ./figs/3.5.1.pdf
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

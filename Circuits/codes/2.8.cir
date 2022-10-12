@@ -8,9 +8,12 @@ v2 3 0 2
 
 .tran 10p 10u 0 uic
 .control
+set filetype=ascii
 run
-set gnuplot_terminal=png/quit
-gnuplot ../figs/2.8 v(2)
+plot v(2)
+wrdata 2.8.dat v(2)
+//set gnuplot_terminal=png/quit
+//gnuplot ../figs/2.8 v(2)
 .endc
 
 .end

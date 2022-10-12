@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.27)  11 OCT 2022 09:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.8.27)  12 OCT 2022 13:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -698,9 +698,6 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `fig:ckt' multiply defined.
 
-
-LaTeX Warning: Label `fig:ckt' multiply defined.
-
 )
 \openout1 = `main.aux'.
 
@@ -897,34 +894,25 @@ File: figs/2.7.pdf Graphic file (type pdf)
 Package pdftex.def Info: figs/2.7.pdf  used on input line 246.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
  [3 <./figs/2.5.pdf> <./figs/lap-ckt.jpg> <./figs/2.7.pdf>]
-<figs/2.8.png, id=190, 481.8pt x 361.35pt>
-File: figs/2.8.png Graphic file (type png)
-<use figs/2.8.png>
-Package pdftex.def Info: figs/2.8.png  used on input line 258.
-(pdftex.def)             Requested size: 252.0pt x 189.00032pt.
+<figs/2.8.1.pdf, id=190, 462.52798pt x 346.89601pt>
+File: figs/2.8.1.pdf Graphic file (type pdf)
+<use figs/2.8.1.pdf>
+Package pdftex.def Info: figs/2.8.1.pdf  used on input line 259.
+(pdftex.def)             Requested size: 252.0pt x 189.00429pt.
  (./Tikz Circuits/3.2.tex)
 <figs/3.4.pdf, id=194, 462.52798pt x 346.89601pt>
 File: figs/3.4.pdf Graphic file (type pdf)
 <use figs/3.4.pdf>
-Package pdftex.def Info: figs/3.4.pdf  used on input line 318.
+Package pdftex.def Info: figs/3.4.pdf  used on input line 319.
 (pdftex.def)             Requested size: 252.0pt x 189.00429pt.
-Package epstopdf Info: Source file: <figs/3.5.eps>
-(epstopdf)                    date: 2022-10-03 15:41:14
-(epstopdf)                    size: 86213 bytes
-(epstopdf)             Output file: <figs/3.5-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-10-11 09:45:57
-(epstopdf)                    size: 18692 bytes
-(epstopdf)             Command: <repstopdf --outfile=figs/3.5-eps-converted-to.pdf figs/3.5.eps>
-(epstopdf)             \includegraphics on input line 330.
-Package epstopdf Info: Output file is already uptodate.
-<figs/3.5-eps-converted-to.pdf, id=195, 361.35pt x 252.945pt>
-File: figs/3.5-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/3.5-eps-converted-to.pdf>
-Package pdftex.def Info: figs/3.5-eps-converted-to.pdf  used on input line 330.
-(pdftex.def)             Requested size: 252.0pt x 176.4003pt.
- [4 <./figs/2.8.png>] [5
+<figs/3.5.1.pdf, id=195, 462.52798pt x 346.89601pt>
+File: figs/3.5.1.pdf Graphic file (type pdf)
+<use figs/3.5.1.pdf>
+Package pdftex.def Info: figs/3.5.1.pdf  used on input line 332.
+(pdftex.def)             Requested size: 252.0pt x 189.00429pt.
+ [4 <./figs/2.8.1.pdf>] [5
 
- <./figs/3.4.pdf> <./figs/3.5-eps-converted-to.pdf>] (./main.aux)
+ <./figs/3.4.pdf> <./figs/3.5.1.pdf>] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -932,18 +920,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 80D0DD33AA9778FFCAFBC8423D3F8078;516.
  ) 
 Here is how much of TeX's memory you used:
- 39957 strings out of 478287
- 907116 string characters out of 5849289
- 1493575 words of memory out of 5000000
- 57511 multiletter control sequences out of 15000+600000
+ 39926 strings out of 478287
+ 906638 string characters out of 5849289
+ 1498575 words of memory out of 5000000
+ 57487 multiletter control sequences out of 15000+600000
  548225 words of font info for 191 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,103p,540b,1952s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 340095 bytes).
+Output written on main.pdf (5 pages, 345840 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 103 named destinations out of 1000 (max. 500000)
+ 416 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 105 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

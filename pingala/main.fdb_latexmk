@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1665394574 "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.tex" "main.pdf" "main" 1665394574
+["pdflatex"] 1665554609 "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.tex" "main.pdf" "main" 1665554609
   "/etc/texmf/web2c/texmf.cnf" 1661570998 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.tex" 1665394435 11356 ee35a9877f57550e6edce107d5bb85c1 ""
+  "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/pingala/main.tex" 1665554609 11356 ca0c6462070c782f38b59aae2554bc4e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -133,10 +133,10 @@
   "figs/1.4.pdf" 1665394574 11749 6472f1d5b805cd1aea6fdfcbbec9100d ""
   "figs/2.1.pdf" 1665393685 9884 87a8f162b897650e0a91496d9d4f2ca8 ""
   "figs/2.2.pdf" 1665393685 9670 fcbe59606c7f699b3b6e360c642a7c4e ""
-  "main.aux" 1665394574 2590 f2bbb109892fad9ee2214e88c4829e49 "pdflatex"
-  "main.out" 1665394574 377 6ef0fda02ae42ab5eb9699af63378c50 "pdflatex"
-  "main.tex" 1665394435 11356 ee35a9877f57550e6edce107d5bb85c1 ""
-  "main.toc" 1665394574 214 526e57d549653fa4240731eba1d24921 "pdflatex"
+  "main.aux" 1665554609 2590 f2bbb109892fad9ee2214e88c4829e49 "pdflatex"
+  "main.out" 1665554609 377 6ef0fda02ae42ab5eb9699af63378c50 "pdflatex"
+  "main.tex" 1665554609 11356 ca0c6462070c782f38b59aae2554bc4e ""
+  "main.toc" 1665554609 214 526e57d549653fa4240731eba1d24921 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

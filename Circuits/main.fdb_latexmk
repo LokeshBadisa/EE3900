@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1665462217 "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.tex" "main.pdf" "main" 1665462218
+["pdflatex"] 1665561008 "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.tex" "main.pdf" "main" 1665561009
   "/etc/texmf/web2c/texmf.cnf" 1661570998 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.tex" 1665462216 11194 52d3ef3093d9a86f448295239a1469bb ""
+  "/home/lokesh/Desktop/BTech/EE3900-Linear-Systems-and-Signal-Processing/Circuits/main.tex" 1665561008 11224 75be2b1fdd52a136c51a9ddc17eec1f0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -216,15 +216,15 @@
   "figs/2.4.pdf" 1665393685 7063 9c7e1a4c2be0c5898225cc38e1feb789 ""
   "figs/2.5.pdf" 1664736339 9310 6c385d34487fc7345ae0b05f64975ea2 ""
   "figs/2.7.pdf" 1664783528 10819 b0c1d5a90d391c79432f87e17287bb55 ""
-  "figs/2.8.png" 1665462145 5339 6261efafb58fb1ab65846cdc471749b9 ""
+  "figs/2.8.1.pdf" 1665560603 17449 4f73cd98a564195383aeee3c91c27efe ""
   "figs/3.4.pdf" 1664783939 11950 c3d5f6f25470f8b9dc11bd171aa2e4a0 ""
-  "figs/3.5.eps" 1664791874 86213 ea6643590c0bdf83b1371049efe468bd ""
+  "figs/3.5.1.pdf" 1665560603 18538 2eada69bb5353c2bce9623b31f853976 ""
   "figs/ckt.jpg" 1664603770 69298 63890edd9fcac75851d5561bfccbbec3 ""
   "figs/lap-ckt.jpg" 1664603791 144596 60230f709c71f4dc5cd9c27272bc7bfb ""
-  "main.aux" 1665462217 3295 6f87cefbee02be726aeb3f87019edc73 "pdflatex"
-  "main.out" 1665462217 516 80d0dd33aa9778ffcafbc8423d3f8078 "pdflatex"
-  "main.tex" 1665462216 11194 52d3ef3093d9a86f448295239a1469bb ""
-  "main.toc" 1665462217 291 81d64fcf134048f05161836b77c7b59b "pdflatex"
+  "main.aux" 1665561009 3250 3e7c7aa59a09165d09b20e9111c54692 "pdflatex"
+  "main.out" 1665561009 516 80d0dd33aa9778ffcafbc8423d3f8078 "pdflatex"
+  "main.tex" 1665561008 11224 75be2b1fdd52a136c51a9ddc17eec1f0 ""
+  "main.toc" 1665561009 291 81d64fcf134048f05161836b77c7b59b "pdflatex"
   (generated)
   "main.aux"
   "main.log"
