@@ -1,0 +1,269 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}         
+\usepackage{listings}
+\usepackage{lstautogobble}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{polynom}
+\usepackage{capt-of}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\var}[1]{\mathrm{Var}\left[ #1 \right]}
+\providecommand{\der}[1]{\mathrm{d} #1}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\z}[1]{{\mathcal{Z}}\{#1\}}
+\providecommand{\ztrans}{\overset{\mathcal{Z}}{ \rightleftharpoons}}
+\providecommand{\system}[1]{\overset{\mathcal{#1}}{ \longleftrightarrow}}
+\providecommand{\laplaceinv}[1]{{\mathcal{L}^{-1}\ensuremath{\left[#1\right]}}}
+\providecommand{\parder}[2]{\frac{\partial}{\partial #2} \brak{#1}}
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+
+\numberwithin{equation}{section}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand\thesection{\arabic{section}}
+
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+
+\lstset {
+	frame=single, 
+	breaklines=true,
+	columns=fullflexible,
+	autogobble=true
+}             
+   
+
+
+\begin{document}
+                             
+\title{ Digital Signal Processing \\ \Large EE3900: Linear Systems and Signal Processing \\ \large Indian Institute of Technology Hyderabad \\ \vspace*{12pt} \textbf{Fourier Series}}
+\author{Lokesh Badisa\\ \normalsize AI21BTECH11001 \\ \vspace*{20pt} \normalsize 12 Oct 2022  }
+ \maketitle 
+ \tableofcontents
+ \begin{abstract}
+    This manual provides a simple introduction to Fourier Series
+    \end{abstract}
+    \section{Periodic Function}
+    Let 
+    \begin{align}
+        x(t) &= A_0\abs{\sin\brak{2\pi f_0 t}}
+        \label{eq:10-orig-diff-def}
+    \end{align}
+    \begin{enumerate}[label=\thesection.\arabic*
+    ,ref=\thesection.\theenumi]
+    \item Plot $x(t)$.\\
+    \solution 
+    \begin{lstlisting}
+        wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/charger/codes/1.1.py
+        python3 1.1.py
+    \end{lstlisting}
+    \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/1.1}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
+    \item Show that $x(t)$ is periodic and find its period.
+    \solution 
+    If a signal $x(t)$ is periodic then
+    \begin{align}
+    x(t+T)=x(t)
+    \end{align}
+    where $T$ is known as fundamental period.
+    \indent Since $|sin\theta|$ function is periodic, x(t) is also periodic.
+    \begin{align}
+\text{Fundamental Period}=T=\frac{1}{2}\brak{\frac{2 \pi}{2 \pi f_0}}\\
+\label{eq:ftp}
+=\frac{1}{2f_0}
+    \end{align}
+    \end{enumerate}
+    \section{Fourier Series}
+    Consider $A_0 =12$ and $f_0 = 50$ for all numerical calculations.
+    \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+    \item If
+    %\cite{proakis_dsp}
+    \begin{align}
+        x(t) = \sum_{k = -\infty}^{\infty}c_ke^{\j2\pi kf_0 t}
+    \label{eq:one-Z-complex}
+    \end{align}
+    show that 
+    \begin{align}
+        c_k = f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)e^{-\j2\pi kf_0 t}\, dt
+    \label{eq:one-Z}
+    \end{align}
+    \solution 
+    From \eqref{eq:one-Z-complex},
+    \begin{align}
+            x(t) = \sum_{k = -\infty}^{\infty}c_ke^{\j2\pi kf_0 t}
+    \end{align}
+    Mulitply $e^{-\j2\pi lf_0 t}$ on both sides
+    \begin{align}
+    x(t)e^{-\j2\pi lf_0 t}=\sum_{k = -\infty}^{\infty}c_ke^{\j2\pi kf_0 t}e^{-\j2\pi lf_0 t}
+    \end{align}
+    Integrate on both sides with respect to 't' between $-T$ to $T$ where T is fundamental time period of x(t).\\
+    Using \eqref{eq:ftp},
+    \begin{align}
+    T=\frac{1}{2f_0}
+    \end{align}
+    \begin{align}
+    \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)e^{-\j2\pi kf_0 t}\, dt=\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}\sum_{k = -\infty}^{\infty}c_ke^{\j2\pi \brak{k-l}f_0 t}\,dt\\
+    =\sum_{k = -\infty}^{\infty}c_k\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}e^{\j2\pi \brak{k-l}f_0 t}\,dt
+    \end{align}
+    The above integral:
+    \begin{align}
+    \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}e^{\j2\pi \brak{k-l}f_0 t}\,dt=
+          \begin{cases}
+0 & k\neq l
+\\
+ \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}1\,dt& k=l
+\end{cases}
+    \end{align}
+    \begin{align}
+   \therefore \int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)e^{-\j2\pi kf_0 t}\, dt &=\brak{\frac{1}{f_0}}c_k\\
+  \therefore c_k = f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)e^{-\j2\pi kf_0 t}\, dt
+    \end{align}
+        \item Find $c_k$ for 
+        \eqref{eq:10-orig-diff-def}\\
+        \solution
+        $c_k$ can be calculated even simpler by using
+        \begin{align}
+        c_k = 2f_0\int_{0}^{\frac{1}{2f_0}}x(t)e^{- \j2 \pi kf_0 t}\, dt
+        \end{align}
+        $x(t)=A_0 \sin\brak{2 \pi f_0t}$ in 0 to $\frac{1}{2f_0}$ region.\\
+Also,
+        \begin{align}
+        \label{eq:sin}
+     \sin \theta  =\frac{e^{\j\theta}-e^{-\j \theta}}{2\j} 
+      \end{align}
+      Using \eqref{eq:sin},
+      \begin{align}
+      c_k &= 2f_0\int_{0}^{\frac{1}{2f_0}}A_0 \brak{\frac{e^{\j2\pi f_0t}-e^{-\j 2\pi f_0t}}{2\j}} e^{- \j2 \pi kf_0 t}\,dt\\
+      &=A_0f_0\int_{0}^{\frac{1}{2f_0}} \brak{\frac{e^{\j2\pi\brak{1-k} f_0t}-e^{\j 2\pi\brak{-1-k} f_0t}}{\j}}\,dt\\
+&=A_0f_0\sbrak{\frac{e^{\j2\pi\brak{1-k} f_0t}}{-2\pi \brak{1-k}f_0}\Big|_0^{\frac{1}{2f_0}} - \frac{e^{\j2\pi\brak{-1-k} f_0t}}{-2\pi \brak{-1-k}f_0}\Big|_0^{\frac{1}{2f_0}}}\\
+&=A_0\sbrak{\frac{e^{j\pi\brak{1-k}}-1}{2\pi\brak{k-1}}-\frac{e^{-j\pi\brak{1+k}}-1}{2\pi\brak{k+1}}}
+      \end{align}
+      \begin{equation}
+      \label{eq:ck}
+     = \begin{cases}
+\frac{2A_0}{\pi\brak{1-k^2}}&k=even
+\\
+0&k=odd
+\end{cases}
+      \end{equation}
+    \item Verify 
+        \eqref{eq:10-orig-diff-def}
+        using python.\\
+        \solution 
+        \begin{lstlisting}
+        wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/charger/codes/2.3.py
+        python3 2.3.py
+        \end{lstlisting}
+          \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/2.3}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
+         \item Show that 
+    \begin{align}
+        x(t) = \sum_{k = 0}^{\infty}\brak{a_k\cos{2\pi kf_0 t}+b_k\sin{2\pi kf_0 t}}
+    \label{eq:one-Z-real}
+    \end{align}
+    and obtain the formulae for $a_k$ and $b_k$.\\
+    \solution
+    Using \eqref{eq:one-Z-complex},
+    \begin{align}
+    x(t) = \sum_{k = -\infty}^{\infty}c_ke^{\j2\pi kf_0 t}
+    \end{align}
+    As,
+    \begin{align}
+    e^{\j2\pi kf_0 t}=\cos\brak{2\pi kf_0 t}+j\sin\brak{2\pi kf_0 t}
+    \end{align}
+    Substituting leads to
+    \begin{align}
+    x(t) &= \sum_{k = -\infty}^{\infty}c_k\sbrak{\cos\brak{2\pi kf_0 t}+j\sin\brak{2\pi kf_0 t}}\\
+    \label{eq:2.4}
+    &=\sum_{k = -\infty}^{\infty}c_k\cos\brak{2\pi kf_0 t}+jc_k\sin\brak{2\pi kf_0 t}\\
+    &=\sum_{k = -\infty}^{-1}\sbrak{c_k\cos\brak{2\pi kf_0 t}+jc_k\sin\brak{2\pi kf_0 t}}+c_0+\sum_{k = 1}^{\infty}\sbrak{c_k\cos\brak{2\pi kf_0 t}+jc_k\sin\brak{2\pi kf_0 t}}\\
+    &=\sum_{k = 1}^{\infty}\sbrak{c_{-k}\cos\brak{2\pi kf_0 t}-jc_{-k}\sin\brak{2\pi kf_0 t}}+c_0+\sum_{k = 1}^{\infty}\sbrak{c_k\cos\brak{2\pi kf_0 t}+jc_k\sin\brak{2\pi kf_0 t}}\\
+    &=c_0+\sum_{k = 1}^{\infty}\sbrak{\brak{c_k+c_{-k}}\cos\brak{2\pi kf_0 t}+j\brak{c_k-c_{-k}}\sin\brak{2\pi kf_0 t}}
+    \end{align}
+    Replacing $\brak{c_k+c_{-k}}\to a_k$ and $j\brak{c_k-c_{-k}} \to b_k$,
+    \begin{align}
+&=c_0+    \sum_{k = 1}^{\infty}\brak{a_k\cos{2\pi kf_0 t}+b_k\sin{2\pi kf_0 t}}\\
+&=\sum_{k = 0}^{\infty}\brak{a_k\cos{2\pi kf_0 t}+b_k\sin{2\pi kf_0 t}}
+    \end{align}
+    \begin{align}
+    \label{eq:u1}
+    \therefore a_k=
+    \begin{cases}
+    c_k+c_{-k}&k\neq0
+    \\
+    c_0&k=0
+    \end{cases}\\
+    \label{eq:u2}
+    b_k=j\brak{c_k-c_{-k}}
+    \end{align}
+    Using \eqref{eq:one-Z},
+    \begin{align}
+    c_k = f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)e^{-\j2\pi kf_0 t}\, dt\\
+    c_{-k} = f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)e^{\j2\pi kf_0 t}\, dt\end{align}
+    \begin{align}
+    a_k=c_k+c_{-k}&= f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)\sbrak{e^{-\j2\pi kf_0 t}+e^{\j2\pi kf_0 t}}\, dt\\
+    &=2f_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)\cos\brak{2\pi kf_0t}\, dt
+    \end{align}
+    Parallely,
+    \begin{align}
+    b_k&=-2jf_0\int_{-\frac{1}{2f_0}}^{\frac{1}{2f_0}}x(t)\sin\brak{2\pi kf_0t}\, dt
+    \end{align}
+    \item Find $a_k$ and $b_k$ for 
+        \eqref{eq:10-orig-diff-def}\\
+        \solution
+        Using \eqref{eq:u1} and \eqref{eq:u2} with \eqref{eq:ck},
+    \begin{align}
+    a_k=c_k+c_{-k}=\begin{cases}
+\frac{4A_0}{\pi\brak{1-k^2}}&k=even
+\\
+\frac{2A_0}{\pi}&k=0
+\\
+0&k=odd
+\end{cases}\\
+b_k=j\brak{c_k-c_{-k}}=0
+    \end{align}
+    \item Verify 
+    \eqref{eq:one-Z-real}
+    using python.\\
+     \solution 
+        \begin{lstlisting}
+        wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/charger/codes/2.6.py
+        python3 2.3.py
+        \end{lstlisting}
+          \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/2.6}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
+    \end{enumerate}
+    \end{document}
