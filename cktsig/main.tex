@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{txfonts}         
 \usepackage{listings}
+\usepackage{siunitx}
 \usepackage{lstautogobble}
 \usepackage{mathtools}
 \usepackage{bm}
@@ -62,10 +63,6 @@
 \author{Lokesh Badisa\\ \normalsize AI21BTECH11005 \\ \vspace*{20pt} \normalsize 7 Oct 2022  }
  \maketitle 
  \tableofcontents
- \section{Software Installation}
- \begin{lstlisting}
-	sudo apt install ngspice
- \end{lstlisting}
  \section{Definitions}
 \begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 \numberwithin{equation}{section}
@@ -115,7 +112,7 @@ wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Si
 \item Find $q_1$.\\
 \solution
 Before switching S to Q:
-\begin{figure}
+\begin{figure}[!ht]
  %\centering
   \input{Tikz Circuits/2.3.tex}
 \caption{Before switching S to Q}
@@ -123,12 +120,12 @@ Before switching S to Q:
 \end{figure}
 Calculating current,
 \begin{align}
-1-i-2i-2=0\\
-3i=-1 \Rightarrow i=\frac{-1}{3}
+2-2i-i-1=0\\
+\Rightarrow i=\frac{1}{3}
 \end{align}
 Potential Difference between capacitor at steady state is
 \begin{align}
-1-\brak{\frac{-1}{3}}=\frac{4}{3}\\
+V_c=2-\brak{\frac{2}{3}}=\frac{4}{3}\\
 q_1=\frac{4}{3} \cdot 1\\
 =\frac{4}{3} \mu C
 \end{align}
@@ -201,40 +198,34 @@ python3 2.5.py
 			2u(t) \system{L} V_2(s)
 		\end{align}
 		Find the voltage across the capacitor $V_{C_0}(s)$.
-		\solution
-		\begin{align}
-		R_{eff}=\frac{1}{1+\frac{1}{2}}
-		=\frac{2}{3} \Omega\\
-		V_{eff}=\frac{1}{1+\frac{1}{2}}
-		=\frac{2}{3} V
-		\end{align}
-		%Effective Circuit in Laplacian Space is
-	
-\begin{align}
-V_{C_0}(s)&=V_{S}(s)\frac{C_{0}}{C_{0}+R_{eff}}\\
-&=\brak{\frac{4}{3s}}\brak{\frac{\frac{1}{s}}{\frac{1}{s}+\frac23}}\\
-\label{eq:laptr}
-&=\frac{6}{s\brak{4s+9}}
-\end{align}
-	\item Find $v_{C_0}(t)$.  Plot using python.\\
-	\solution Using \eqref{eq:laptr},
+		\solution 
 	\begin{align}
-	\frac{6}{s\brak{4s+9}}&=\frac{4}{3s}-\frac{2}{9+4s}
+		V_1(s) &= \frac{1}{s}  \\
+		V_2(s) &= \frac{2}{s}  
+	\end{align}		
+		
+	By Kirchoff's junction law, we get
+	\begin{align}
+		&\frac{V_c - V_1}{R_1} + 	\frac{V_c - V_2}{R_2} + \frac{V_c - 0}{\frac{1}{sC_0}} = 0 \\
+		\implies &V_c \brak{\frac{1}{R_1} + \frac{1}{R_2} + sC_0} = \frac{V_1}{R_1} + \frac{V_2}{R_2} \\
+		\implies &V_c(s) = \frac{\frac{1}{sR_1} + \frac{2}{sR_2}}{\frac{1}{R_1} + \frac{1}{R_2} + sC_0} \\
+		&\qquad = \frac{\frac{1}{R_1C_0} + \frac{2}{R_2C_0}}{s\brak{s + \frac{1}{R_1C_0} + \frac{1}{R_2C_0}}} 
 	\end{align}
-	Apply inverse Laplacian Transform,
+	\item Find $v_{C_0}(t)$.  Plot using python.\\
+	\solution On performing partial fraction decomposition
+	\begin{align} 
+		V_c(s) &=  \frac{\frac{1}{R_1C_0} + \frac{2}{R_2C_0}}{\frac{1}{R_1C_0} + \frac{1}{R_2C_0}} \brak{\frac{1}{s} - \frac{1}{s + \frac{1}{R_1C_0} + \frac{1}{R_2C_0}}}, \Re(s) > 0
+	\end{align}
+	
+	On taking the inverse Laplace transform, we get
 	\begin{align}
-	V_{C_0}(s)\system{L^{-1}}V_{C_0}(t)\\
-	\laplaceinv{V_{C_0}(s)}&=\laplaceinv{\frac{4}{3s}-\frac{2}{9+4s}}\\
-&=	\laplaceinv{\frac{4}{3s}}-\laplaceinv{\frac{2}{9+4s}}
-\end{align}
-Since,
-\begin{align}
-\laplaceinv{\frac1s}&=u(t)\\
-\laplaceinv{\frac{1}{s-a}}&=e^{at}u(t)
-\end{align}
-Using the above equations,
-\begin{align}
-V_{C_0}(t)=\frac{4}{3}\brak{ 1-e^{\frac{-3}{2} t}}u(t)
+	v_c(t) &= \frac{2R_1 + R_2}{R_1 + R_2} \brak{u(t) - e^{-\brak{\frac{1}{R_1} + \frac{1}{R_2}} \frac{t}{C_0}} u(t)} \\
+	&= \frac{2R_1 + R_2}{R_1 + R_2} \brak{1 - e^{-\brak{\frac{1}{R_1} + \frac{1}{R_2}} \frac{t}{C_0}} }u(t)
+	\end{align}
+	
+	Substitute the values $R_1 = \SI{1}{\ohm}, R_2 = \SI{2}{\ohm}, C_0 = \SI{1}{\micro\farad}$
+	\begin{align}
+		v_c(t) = \SI[parse-numbers=false]{\frac{4}{3} \brak{1 - e^{-\frac{3}{2} \times 10^6 t}} u(t)}{\volt}
 	\end{align}
 	The following command plots the above equation.
 	\begin{lstlisting}
@@ -247,7 +238,7 @@ python3 2.7.py
 			\caption{Plot of $V_{C_0}(t)$}
 			%\label{fig:lap-ckt}
 \end{figure}
-	\item Verify your result using ngspice.
+	\item Verify your result using ngspice.\\
 	\solution The following command plots the ROC of above Laplace Transform.
 	\begin{lstlisting}
 wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/2.8.cir
@@ -274,9 +265,9 @@ python3 2.8.py
 			\end{align*}
 \item Draw the equivalent $s$-domain resistive circuit when S is switched to position Q.  Use variables $R_1, R_2, C_0$ for the passive elements.
 Use latex-tikz.
-		\label{prob:init}
+		\label{prob:init}\\
 		\solution 
-		The following command plots the ROC of above Laplace Transform.
+		The following command downloads tex file of circuit.
 	\begin{lstlisting}
 wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/Tikz Circuits/3.2.tex
 \end{lstlisting}
@@ -320,7 +311,7 @@ python3 3.4.py
 			\caption{Plot of $V_{C_0}(t)$}
 			%\label{fig:lap-ckt}
 \end{figure}
-	\item Verify your result using ngspice.
+	\item Verify your result using ngspice.\\
 	\solution The following command plots Fig.3.3
 	\begin{lstlisting}
 wget https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/Circuits/codes/3.5.cir
@@ -344,8 +335,166 @@ Using \eqref{eq:v2-t},
     v_{C_0}(0+) &= \lim_{t \to 0+}v_{C_0}(t) = {\frac{4}{3}}{V} \\
     v_{C_0}(\infty) &= \lim_{t \to \infty}v_{C_0}(t) = {\frac{2}{3}}{V}
 \end{align}
-
-
+\item Obtain Fig. \ref{prob:init} using the equivalent differential equation
+	
+	\solution Using Kirchoff's junction law
+	\begin{align}
+		\frac{v_c(t) - 0}{R_1} + \frac{v_c(t) - v_2(t)}{R_2} + \frac{\der{q}}{\der{t}} = 0
+	\end{align}
+	where $q(t)$ is the charge on the capacitor
+	
+	On taking the Laplace transform on both sides of this equation
+	\begin{align}
+		\frac{V_c(s) - 0}{R_1} + \frac{V_c(s) - V_2(s)}{R_2} + \brak{sQ(s) - q(0^-)} = 0
+	\end{align}
+	
+	But $q(0^-) = \frac43 C_0$ and 
+	\begin{align}
+		q(t) &= C_0v_c(t) \\
+		\implies Q(s) &= C_0V_c(s)
+	\end{align}
+	
+	Thus
+	\begin{align}
+		&\frac{V_c(s) - 0}{R_1} + \frac{V_c(s) - V_2(s)}{R_2} + \brak{sC_0V_c(s) - \frac43 C_0} = 0 \\
+		\implies &\frac{V_c(s) - 0}{R_1} + 	\frac{V_c(s) - V_2(s)}{R_2} + \frac{V_c(s) - \frac{4}{3s}}{\frac{1}{sC_0}} = 0 
+	\end{align}
+	
+	which is the same equation as the one we obtained from Fig. \ref{prob:init}
 	\end{enumerate}
-
+	\section{Bilinear Transform}
+	\begin{enumerate}[label=\thesection.\arabic*.,ref=\thesection.\theenumi]
+	\item In Fig. \ref{fig:ckt}, consider the case when $S$ is switched to $Q$ right in the beginning. Formulate the differential equation
+	
+	\solution The differential equation is the same as before 
+	\begin{align}
+		&\frac{v_c(t) - 0}{R_1} + \frac{v_c(t) - v_2(t)}{R_2} + \frac{\der{q}}{\der{t}} = 0 \\
+		\text{i.e., } &\frac{v_c(t)}{R_1} + \frac{v_c(t) - v_2(t)}{R_2} + C_0\frac{\der{v_c}}{\der{t}} = 0
+	\end{align}
+	\begin{equation}
+		q(0^-) = q(0) = 0
+	\end{equation}
+	
+	\item Find $H(s)$ considering the ouput voltage at the capacitor
+	
+	\solution On taking the Laplace transform on both sides of this equation
+	\begin{align}
+		&\frac{V_c(s)}{R_1} + \frac{V_c(s) - V_2(s)}{R_2} + sQ(s) - 0 = 0 \\
+		\implies &V_c(s) \brak{\frac{1}{R_1} + \frac{1}{R_2}} + sC_0V_c(s) = \frac{V_2(s)}{R_2} \\
+		\implies &\frac{V_c(s)}{V_2(s)} = \frac{\frac{1}{R_2}}{\frac{1}{R_1} + \frac{1}{R_2} + sC_0}
+	\end{align}
+	\begin{align}
+		H(s)=\frac{V_c(s)}{V_2(s)} = \frac{\frac{1}{R_2C_0}}{s + \frac{1}{R_1C_0} + \frac{1}{R_2C_0}}\\
+		H(s) = \frac{5 \times 10^5}{s + 1.5 \times 10^6}
+	\end{align}
+	
+	\item Plot $H(s)$.  What kind of filter is it?
+	
+	\solution Download the following Python code that plots Fig. \ref{fig-4.3}
+	\begin{lstlisting}
+		https://raw.githubusercontent.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/main/cktsig/codes/4.3.py
+		python 4.3.py
+	\end{lstlisting}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=\columnwidth]{./figs/4.3}
+		\caption{Plot of $H(s)$}
+		\label{fig-4.3}	
+	\end{figure}
+	\begin{align}
+		H(\j\omega) &= \frac{5 \times 10^5}{\j\omega + 1.5 \times 10^6} \\
+		\implies \abs{H(\j\omega)} &= \frac{5 \times 10^5}{\sqrt{\omega^2 + 2.25\times10^{12}}}
+	\end{align}
+	
+	As $\omega$ increases, $\abs{H(\j\omega)}$ decreases.
+	
+	In other words, the amplitude of high-frequency signals gets diminished and they get filtered out.
+	
+	Therefore, this is a low-pass filter.
+	
+	\item Using trapezoidal rule for integration, formulate the difference equation by considering 
+	\begin{align}
+		y(n) = y(t)\vert_{t=n}
+	\end{align}
+	
+	\solution
+	\begin{align}
+		&\frac{v_c(t)}{R_1} + \frac{v_c(t) - v_2(t)}{R_2} + C_0\frac{\der{v_c}}{\der{t}} = 0 \\
+		\implies &C_0\frac{\der{v_c}}{\der{t}} = \frac{2u(t)-v_c(t)}{R_2} - \frac{v_c(t)}{R_1} \\
+		\implies &\left.v_c(t)\right|_{t=n}^{n+1} = \int_{n}^{n+1} \brak{\frac{2u(t)-v_c(t)}{R_2C_0} - \frac{v_c(t)}{R_1C_0}} \der{t}
+	\end{align}
+	
+	By the trapezoidal rule of integration
+	\begin{align}
+		\int_a^b f(t) \der{t} \approx \frac{b-a}{2} (f(a) + f(b))
+	\end{align}
+	
+	Consider $y(t) = v_c(t)$
+	\begin{multline}
+		y(n+1) - y(n) = \frac{1}{R_2C_0}\brak{u(n)+u(n+1)} \\
+		- \frac12(y(n+1) + y(n))\brak{\frac{1}{R_1C_0} + \frac{1}{R_2C_0}}
+	\end{multline}
+	
+	Thus, the difference equation is
+	\begin{multline}
+		y(n+1) \brak{1 + \frac{1}{2R_1C_0} + \frac{1}{2R_2C_0}} \\= y(n) \brak{1 - \frac{1}{2R_1C_0} - \frac{1}{2R_2C_0}} \\+ \frac{1}{R_2C_0}\brak{u(n)+u(n+1)}
+	\end{multline}
+	
+	\item Find $H(z)$
+	
+	\solution Let $\z{y(n)} = Y(z)$
+	
+	On taking the $Z$-transform on both sides of the difference equation
+	\begin{multline}
+		zY(z)\brak{1 + \frac{1}{2R_1C_0} + \frac{1}{2R_2C_0}} \\= Y(z)\brak{1 - \frac{1}{2R_1C_0} - \frac{1}{2R_2C_0}} \\+ \frac{1}{R_2C_0} \brak{\frac{1}{1-z^{-1}} + \frac{z}{1-z^{-1}}}
+	\end{multline}
+	\begin{multline}
+		Y(z)\brak{z + \frac{z}{2R_1C_0} + \frac{z}{2R_2C_0} - 1 + \frac{1}{2R_1C_0} + \frac{1}{2R_2C_0}} \\
+		= \frac{1}{R_2C_0} \frac{1+z}{1-z^{-1}}
+	\end{multline}
+	
+	Also
+	\begin{align}
+		v_2(t) &= 2 &&\forall t \ge 0\\
+		\implies x(n) &= 2u(n) \\
+		\implies X(z) &= \frac{2}{1-z^{-1}} &&\abs{z} > 1
+	\end{align}
+	
+	Thus, the transfer function in $z$-domain is
+	\begin{align}
+		H(z) &= \frac{Y(z)}{X(z)} \\
+		&= \frac{\frac{1+z}{2R_2C_0}}{z + \frac{z}{2R_1C_0} + \frac{z}{2R_2C_0} - 1 + \frac{1}{2R_1C_0} + \frac{1}{2R_2C_0}} \\
+		&= \frac{\frac{1 + z^{-1}}{2R_2C_0}}{1 + \frac{1}{2R_1C_0} + \frac{1}{2R_2C_0} - z^{-1} + \frac{z^{-1}}{2R_1C_0} + \frac{z^{-1}}{2R_2C_0}}
+	\end{align}
+	
+	On substituting the values
+	\begin{align}
+		H(z) &= \frac{2.5\times10^5 (1+z^{-1})}{7.5\times10^5 + 1 + (7.5\times10^5 - 1)z^{-1}}
+	\end{align}
+	
+	with the ROC being
+	\begin{align}
+		\abs{z} &> \max\brak{1, \abs{\frac{7.5\times10^5 - 1}{7.5\times10^5 + 1}}} \\
+		\implies \abs{z} &> 1
+	\end{align}
+	
+	\item How can you obtain $H(z)$ from $H(s)$?
+	
+	\solution The $Z$-transform can be obtained from the Laplace transform by the substitution
+	\begin{align}
+		s &= \frac{2}{T} \frac{1-z^{-1}}{1+z^{-1}}
+	\end{align}
+	where $T$ is the step size of the trapezoidal rule ($1$ in our case)
+	
+	This is known as the bilinear transform
+	
+	Thus
+	\begin{align}
+		H(z) &= \frac{\frac{1}{R_2C_0}}{2\frac{1-z^{-1}}{1+z^{-1}} + \frac{1}{R_1C_0} + \frac{1}{R_2C_0}} \\
+		&= \frac{\frac{1 + z^{-1}}{2R_2C_0}}{1-z^{-1}	 + \brak{\frac{1}{2R_1C_0} + \frac{1}{2R_2C_0}}(1 + z^{-1})} \\
+		&= \frac{\frac{1 + z^{-1}}{2R_2C_0}}{1 + \frac{1}{2R_1C_0} + \frac{1}{2R_2C_0} - z^{-1} + \frac{z^{-1}}{2R_1C_0} + \frac{z^{-1}}{2R_2C_0}} \\
+		&= \frac{2.5\times10^5 (1+z^{-1})}{7.5\times10^5 + 1 + (7.5\times10^5 - 1)z^{-1}}
+	\end{align}
+	which is the same as what we obtained earlier
+	\end{enumerate}
 \end{document}
