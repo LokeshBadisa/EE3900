@@ -10,15 +10,20 @@
 \usepackage{lstautogobble}
 \usepackage{mathtools}
 \usepackage{bm}
+\usepackage{tikz}
 \usepackage{hyperref}
 \usepackage{polynom}
 \usepackage{capt-of}
 \newcommand{\solution}{\noindent \textbf{Solution: }}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\rect}[1]{\text{rect}\ensuremath{\left(#1\right)}}
 \providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
 \providecommand{\sbrak}[1]{\ensuremath{\left[#1\right]}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\foutranin}[1]{\mathcal{F}\cbrak{#1}}
+\providecommand{\foutranfin}[1]{\int_{-\infty}^{\infty}{#1}e^{-j2\pi ft}\,dt}
+\providecommand{\sinc}[1]{\text{sinc}\ensuremath{\left(#1\right)}}
 \providecommand{\var}[1]{\mathrm{Var}\left[ #1 \right]}
 \providecommand{\der}[1]{\mathrm{d} #1}
 \providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
@@ -58,7 +63,7 @@
 \begin{document}
                              
 \title{ Digital Signal Processing \\ \Large EE3900: Linear Systems and Signal Processing \\ \large Indian Institute of Technology Hyderabad \\ \vspace*{12pt} \textbf{Fourier Series}}
-\author{Lokesh Badisa\\ \normalsize AI21BTECH11001 \\ \vspace*{20pt} \normalsize 12 Oct 2022  }
+\author{Lokesh Badisa\\ \normalsize AI21BTECH11005 \\ \vspace*{20pt} \normalsize 12 Oct 2022  }
  \maketitle 
  \tableofcontents
  \begin{abstract}
@@ -266,4 +271,167 @@ b_k=j\brak{c_k-c_{-k}}=0
 			%\label{fig:ckt}
 \end{figure}
     \end{enumerate}
+    \section{Fourier Transform}
+ 
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item 
+	\begin{align}
+		\delta(t)&=0, \quad t\neq0
+\\
+		\int_{-\infty}^{\infty}\delta(t) \, dt&= 1
+	\end{align}
+ \item The Fourier Transform of $g(t)$ is
+ \begin{align}
+ \label{eq:foutraneq}
+ G(f)=\int_{-\infty}^{\infty}g(t)e^{-j2\pi ft}\,dt
+ \end{align}
+ \item Show that 
+ \begin{align}
+	 g(t-t_0)&\system{F}G(f)e^{-j2\pi ft_0}\\
+ \end{align}
+ \solution 
+ \begin{align}
+ \mathcal{F}\cbrak{g(t-t_0)}=\int_{-\infty}^{\infty}g(t-t_0)e^{-j2\pi ft}\,dt\\
+ =e^{-j2\pi ft_0}\int_{-\infty}^{\infty}g(t-t_0)e^{-j2\pi f\brak{t-t_0}}\,dt\\
+=G(f)e^{-j2\pi ft_0}
+ \end{align}
+ \item Show that 
+ \begin{align}
+ \label{eq:duality}
+	 G(t)&\system{F}g(-f)
+ \end{align}\\
+ \solution From the definition of Inverse Fourier Transform
+ \begin{align}
+ g(t)=\int_{-\infty}^{\infty}G(f)e^{j2\pi ft}\,df
+ \end{align}
+ Replace t $\to$ f,
+ \begin{align}
+  g(f)=\int_{-\infty}^{\infty}G(t)e^{j2\pi ft}\,dt
+  \end{align}
+  Replace f $\to$ -f,
+  \begin{align}
+   g(-f)=\int_{-\infty}^{\infty}G(t)e^{-j2\pi ft}\,dt\\
+    =\mathcal{F}\cbrak{G(t)}
+  \end{align}
+  \begin{align}
+  \therefore  G(t)&\system{F}g(-f)
+ \end{align}
+ \item $\delta(t)\system{F}?$\\
+ \solution
+ \begin{align}
+ \foutranin{\delta(t)}=\foutranfin{\delta(t)}\\
+ =\int_{-\infty}^{\infty}\delta(t)\,dt\\
+ \end{align}
+ Since $e^{-j2\pi ft}=1$ for t=0 and remaining integrand is zero for t $\neq0$.
+ \begin{align}
+  =\int_{-\infty}^{\infty}\delta(t)\,dt\\
+  =1
+ \end{align}
+ \item $e^{-j2\pi f_0t}\system{F}?$\\
+ \solution 
+ \begin{align}
+ \foutranin{e^{-j2\pi f_0t}}=\int_{-\infty}^{\infty}1\cdot e^{-j2\pi\brak{f+f_0}t}\,dt\\
+ =\int_{-\infty}^{\infty}\foutranin{\delta(t)} e^{-j2\pi\brak{f+f_0}t}\,dt
+ \end{align}
+ Using \eqref{eq:duality},
+ \begin{align}
+ \label{eq:eft}
+ =\delta(-(f+f_0))=\delta(f+f_0)
+ \end{align}
+ \item $\cos(2\pi f_0t)\system{F}?$\\
+ \solution
+ \begin{align}
+ \foutranin{\cos(2\pi f_0t)}=\foutranin{\frac{{e^{j2\pi f_0t}+e^{-j2\pi f_0t}}}{2}}
+ \end{align}
+ Using \eqref{eq:eft},
+ \begin{align}
+ =\frac{\delta(f+f_0)+\delta(f-f_0)}{2}
+ \end{align}
+ \item Find the Fourier Transform of $x(t)$ and plot it.  Verify using python.
+ Using \eqref{eq:one-Z-complex},
+ \begin{align}
+ \foutranin{x(t)}=\foutranin{\sum_{k = -\infty}^{\infty}c_ke^{\j2\pi kf_0 t}}\\
+ X(f)=\sum_{k = -\infty}^{\infty}c_k\delta(f-kf_0)
+ \end{align}
+ \item Show that 
+ \begin{align}
+	 \rect{t} \system{F} \sinc{t}
+ \end{align}
+ Verify using python.\\
+ \solution 
+ \begin{align}
+ \foutranin{\rect{t}}=\foutranfin{\rect{t}}\\
+ =\int_{-\frac{1}{2}}^{\frac{1}{2}}1\cdot e^{-j2\pi ft}\,dt\\
+ =\frac{e^{-j2\pi ft}}{-j2\pi f}\Big |_{-\frac{1}{2}}^{\frac{1}{2}}\\
+\label{eq:rectf}
+ =\sinc{t}
+ \end{align}
+ \item 
+$	 \sinc{t}\system{F} ?$.  Verify using python.\\
+\solution
+Using \eqref{eq:rectf}, \eqref{eq:duality} and even property of rect function,
+\begin{align}
+\label{eq:sinc}
+\sinc{t}\system{F}\rect{t}
+\end{align}
+\end{enumerate}
+\section{Filter}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Find $H(f)$ which transforms $x(t)$ to DC 5V.
+\solution
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}
+\tikzstyle{block} = [draw, shape=rectangle, minimum height=3em, minimum width=4em, node distance=2cm, line width=1pt]
+\node at (-2.5,0) (input) {$x[t]$};
+\node [block] (h) {$h[t]$};
+\node at (2.5,0) (output) {$x[t]*h[t]$};
+\begin{scope}[line width=1pt]
+         \draw[->] (input) -- (h);
+         \draw[->] (h) -- (output); 
+    \end{scope}
+\end{tikzpicture}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}
+\tikzstyle{block} = [draw, shape=rectangle, minimum height=3em, minimum width=4em, node distance=2cm, line width=1pt]
+\node at (-2.5,0) (input) {$X(f)$};
+\node [block] (h) {$H(f)$};
+\node at (2.5,0) (output) {$X(f)H(f)$};
+\begin{scope}[line width=1pt]
+         \draw[->] (input) -- (h);
+         \draw[->] (h) -- (output); 
+    \end{scope}
+\end{tikzpicture}
+\end{figure}
+\begin{align}
+X(f)H(f)=V_0\delta(f)
+\end{align}
+Above equation indicates that H(f) will pass X(f) for f=0.\\
+\,$\therefore$ H(f) should be a low pass filter.
+\begin{align}
+|H(f)|=\frac{V_0}{\brak{\frac{2A_0}{\pi}}}=\frac{V_0\pi}{2A_0}\\
+H(f)=\frac{V_0\pi}{2A_0} \hspace{10pt}in\hspace{8pt}-2f_0\leq f\leq 2f_0\\
+\label{eq:hf}
+H(f)=\frac{V_0\pi}{2A_0}\rect{\frac{f}{4f_0}}
+\end{align}
+\item Find $h(t)$.\\
+\solution 
+Using \eqref{eq:hf} and \eqref{eq:sinc},
+\begin{align}
+h(t)=\frac{2V_0\pi f_0}{A_0}\sinc{4f_0t}
+\end{align}
+\item Verify your result using  through convolution.
+\end{enumerate}
+\section{Filter Design}
+\begin{enumerate}[label=\thesection.\arabic*
+,ref=\thesection.\theenumi]
+\item Design a Butterworth filter for $H(f)$.
+\item Design a Chebyschev filter for $H(f)$.
+\item Design a circuit for your Butterworth filter.
+\item Design a circuit for your Chebyschev filter.
+\end{enumerate}
     \end{document}
