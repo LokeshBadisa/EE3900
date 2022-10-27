@@ -1,6 +1,4 @@
 import numpy as np
-from sympy import Sum,I,pi,exp
-from sympy.abc import k
 import matplotlib.pyplot as plt
 
 
@@ -11,21 +9,22 @@ def c(k):
         return 0
 
 def x(t):
-    expr1 = Sum(c(k)*exp(2*I*pi*k*f0*t),(k,-float('inf'),float('inf')))
-    return(expr1.doit())
-
-
+    sum=0
+    for k in range(-int(1e2),int(1e2)):
+            sum+=c(k)*np.exp(2*1j*np.pi*k*f0*t)
+    return np.real(sum)
 
 A0 = 12
 f0 = 50
 
 t = np.linspace(0, 3/f0, 250)
 plt.plot(t, np.abs(A0*np.sin(2*np.pi*f0*t)),label='$|A\sin{2\pi f_0t}|$')
-plt.plot(t,x(t),label='$\sum_{k=-\infty}^{\infty}c_ke^{j2\pi kf_0t}$')
+plt.scatter(t,[x(i) for i in t],label='$\sum_{k=-\infty}^{\infty}c_ke^{j2\pi kf_0t}$',color='orange')
 plt.xlabel('t')
 plt.ylabel('x(t)')
 plt.grid()
-plt.savefig('charger/figs/2.3.eps')
-plt.savefig('charger/figs/2.3.pdf')
-plt.show()
+plt.legend()
+plt.savefig('../figs/2.3.eps')
+plt.savefig('../figs/2.3.pdf')
+#plt.show()
 
