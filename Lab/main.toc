@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Cover Page}{3}{0}{1}
+\beamer@sectionintoc {2}{Apparatus}{4}{0}{2}
+\beamer@sectionintoc {3}{Circuit Diagram}{5}{0}{3}
+\beamer@sectionintoc {4}{Waveforms}{6}{0}{4}

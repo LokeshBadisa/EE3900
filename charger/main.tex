@@ -2,6 +2,7 @@
 
 \usepackage{enumitem}
 \usepackage{amsmath}
+\usepackage{circuitikz}
 \usepackage{amssymb}
 \usepackage{gensymb}
 \usepackage{graphicx}
@@ -353,6 +354,17 @@ b_k=j\brak{c_k-c_{-k}}=0
  \foutranin{x(t)}=\foutranin{\sum_{k = -\infty}^{\infty}c_ke^{\j2\pi kf_0 t}}\\
  X(f)=\sum_{k = -\infty}^{\infty}c_k\delta(f-kf_0)
  \end{align}
+ The following verifies the above equations:
+ \begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/charger/codes/3.8.py
+python3 3.8.py
+ \end{lstlisting}
+  \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/3.8}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
  \item Show that 
  \begin{align}
 	 \rect{t} \system{F} \sinc{t}
@@ -366,6 +378,16 @@ b_k=j\brak{c_k-c_{-k}}=0
 \label{eq:rectf}
  =\sinc{t}
  \end{align}
+ \begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/charger/codes/3.9.py
+python3 3.9.py
+ \end{lstlisting}
+ \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/3.9}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
  \item 
 $	 \sinc{t}\system{F} ?$.  Verify using python.\\
 \solution
@@ -374,6 +396,16 @@ Using \eqref{eq:rectf}, \eqref{eq:duality} and even property of rect function,
 \label{eq:sinc}
 \sinc{t}\system{F}\rect{t}
 \end{align}
+\begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/charger/codes/3.10.py
+python3 3.10.py
+ \end{lstlisting}
+  \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/3.10}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
 \end{enumerate}
 \section{Filter}
 \begin{enumerate}[label=\thesection.\arabic*
@@ -424,13 +456,114 @@ Using \eqref{eq:hf} and \eqref{eq:sinc},
 h(t)=\frac{2V_0\pi f_0}{A_0}\sinc{4f_0t}
 \end{align}
 \item Verify your result using  through convolution.
+\solution
+\begin{lstlisting}
+wget https://github.com/LokeshBadisa/EE3900-Linear-Systems-and-Signal-Processing/blob/main/charger/codes/4.3.py
+python3 4.3.py
+ \end{lstlisting}
+  \begin{figure}[!ht]
+			\centering
+			\includegraphics[width=\columnwidth]{./figs/4.3}
+			\caption{}
+			%\label{fig:ckt}
+\end{figure}
 \end{enumerate}
 \section{Filter Design}
 \begin{enumerate}[label=\thesection.\arabic*
 ,ref=\thesection.\theenumi]
-\item Design a Butterworth filter for $H(f)$.
-\item Design a Chebyschev filter for $H(f)$.
-\item Design a circuit for your Butterworth filter.
-\item Design a circuit for your Chebyschev filter.
+\item Design a Butterworth filter for $H(f)$.\\
+	\solution 
+		\begin{align}
+		|H(f)|=\frac{1}{\sqrt{1+\left(\frac{f}{f_c}\right)^{2n}}}
+	\end{align}
+		n = Order of the filter\\
+		\begin{align}
+			A=10 log_{10}|H(f)|^2
+		\end{align}
+		\begin{align}
+			A_1=-10 log_{10} \left[1+\left(\frac{f_1}{f_c}\right)^{2n}\right]\\
+A_2=-10 log_{10} \left[1+\left(\frac{f_2}{f_c}\right)^{2n}\right]
+		\end{align}
+		Solving for n,
+		\begin{align}
+			n=\frac{log\left(\frac{10^{-{A_1}/10}-1}{ 10^{-{A_2}/10}-1}\right)}{2 log \left(\frac{f_1}{f_2}\right)}
+		\end{align}
+Assuming values,
+		\begin{align}
+		A_1 = -1 dB\\
+		A_2 = -10 dB\\
+		f_1 = 50 Hz\\
+		f_2 = 100 Hz
+		\end{align}
+		We get,
+		\begin{align}
+			n=2.5596 \approx 3 
+		\end{align}
+		Putting n = 3 in above equations, We get 
+		\begin{align}
+			f_1^{'} = 62.628 Hz \\
+			f_2^{'} = 69.336 Hz \\
+			f_c = \sqrt{f_1^{'} f_2^{'}}=65.897 Hz
+		\end{align}
+		\item Design a Chebyschev filter for $H(f)$.\\
+	\solution 
+		\begin{align}
+		|H_n(f)|=\frac{1}{\sqrt{1+\epsilon^{2}c_{n}^2\left(\frac{f}{f_0}\right)}}
+	\end{align}
+where \\$c_n$=nth order Chebyshev polynomial,\\
+		$\epsilon$=ripple factor which is related to passband ripple in $\delta$ as $\sqrt{10^{\delta / 10}-1}$\\
+\begin{align}
+    A_1 = -10\log_{10}\sbrak{1 + \epsilon^2c_n^2\brak{\frac{f}{f_0}}} \\
+    \implies c_n\brak{\frac{f}{f_0}} = \frac{\sqrt{10^{-\frac{A_1}{10}} - 1}}{\epsilon} \\
+    \implies n = \frac{\cosh^{-1}\brak{\frac{\sqrt{10^{-\frac{A_1}{10}} - 1}}{\epsilon}}}
+    {\cosh^{-1}\brak{\frac{f}{f_0}}}
+\end{align}
+Considering 
+		\begin{align}
+			f_0 = 65 Hz\\
+			f = 120 Hz \\
+			A_1=10  dB\\
+			\delta=0.2 dB\\
+			\epsilon= 0.217
+		\end{align}
+On solving we get n=2.71302,$\implies$ n=3.
+\item Design a circuit for your Butterworth filter.\\
+	\solution 
+		%For this 3rd order filter the $C_1=1,C_3=1$ and $L_2=2$, de-normalizing the values $C_i^{'}=\frac{C_i}{\omega_c}$and similarly  $L_i^{'}=\frac{L_i}{\omega_c}$.
+		Using Cauer Topology,
+		\begin{align}
+			C_{k}=2sin\sbrak{\frac{\brak{2k-1}}{2n}\pi}\\
+			L_{k}=2sin\sbrak{\frac{\brak{2k-1}}{2n}\pi}
+		\end{align}
+		\begin{figure}[!htb]
+    \begin{center}
+    \begin{circuitikz} 
+    \draw
+	(0,0) -- (4,0)--(8,0) 
+	to[C, l^=3.18mF] (8,4)
+	to[L, l=6.36H] (4,4)
+	to[C,l^=3.18F] (4,0)
+	    (4,4)--(0,4);
+    \end{circuitikz}
+    \end{center}
+\caption{}
+\label{fig:3BF}
+\end{figure} 
+\item Design a circuit for your Chebyschev filter.\\
+	\solution the normalised values obtained are$\quad C_1=1.2276 F,L_2=1.1525 H,C_3=1.2276 F$. De-normalizing the values we get:
+		\begin{figure}[!htb]
+    \begin{center}
+    \begin{circuitikz} 
+    \draw
+	(0,0) -- (4,0)--(8,0) 
+	to[C, l^=1.99mF] (8,4)
+	to[L, l=1.876mH] (4,4)
+	to[C,l^=1.99mF] (4,0)
+	    (4,4)--(0,4);
+    \end{circuitikz}
+    \end{center}
+\caption{}
+\label{fig:3CF}
+\end{figure}
 \end{enumerate}
-    \end{document}
+\end{document}
